@@ -2,7 +2,7 @@
 
  
 
-AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. It's highly customisable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
+AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
 
 ![icon](https://psv4.vk.me/c812529/u11225888/docs/fc40c590a745/giphy.gif?extra=caA0mh9X42MfFm8ChqUAF2_2Tttvce1V1FY00NtuAdvO-bBHmegvRQTnUGrDekzAzFktvyzZCsFvC9CNhItk5vrw4IlMw6lPsxdv-xBTqySVUVETixB_)
 
