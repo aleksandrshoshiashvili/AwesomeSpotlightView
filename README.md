@@ -22,10 +22,13 @@ pod "AwesomeSpotlightView"
 ```
 
 
-##Manually
+## Manually
 
 * Just drop AwesomeSpotlightView folder in your project.
 * You're ready to use AwesomeSpotlightView!
 
 ## Author
 * [Aleksandr Shoshiashvili](https://github.com/aleksandrshoshiashvili)
+
+## Inspired by
+* [WSCoachMarksView](https://github.com/workshirt/WSCoachMarksView)
