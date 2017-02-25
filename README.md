@@ -53,7 +53,30 @@ spotlightView.showAllSpotlightsAtOnce = false
 spotlightView.start()
 ```
 
-## Configuration
+## Configuration AwesomeSpotlight
+
+var rect = CGRect()
+  var shape : AwesomeSpotlightShape = .RoundRectangle
+  private var text : String = ""
+  private var attributedText : AttributedString? = nil
+
+### `rect` (CGRect)
+
+The rect of spotlight.
+
+### `shape` (AwesomeSpotlightShape)
+
+Shape of spotlight: .Rectangle, .RoundRectangle, .Circle.
+
+### `text` (String)
+
+The text of the caption.
+
+### `attributedText` (AttributedString)
+
+The attributed text of the caption.
+
+## Configuration AwesomeSpotlightView
 
 ### `spotlightsArray` ([AwesomeSpotlight])
 
@@ -115,7 +138,7 @@ Showed all spotlight at once (at the same time) (default: false).
 
 ### 2. Assign the delegate to your AwesomeSpotlightView view instance:
 
-`spotlightView.delegate = self
+`spotlightView.delegate = self`
 
 ### 3. Implement the delegate protocol methods:
 
