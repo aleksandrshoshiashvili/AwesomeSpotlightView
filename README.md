@@ -8,8 +8,6 @@ AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. I
 
 ![icon](https://cs7064.vk.me/c812520/u11225888/docs/0f11997e9c90/giphy_1.gif?extra=VHTih3h_AUbAufM_bGEi4ci5r1P0lJYRsE4skxT8xXwjJL1EVkgdUT5CuHzoHqZIypvGOEBXq0SI-_HI4QNhg4JfpOCJxenmZHRryF_tI7k1rRh7YB3h)
 
-![icon](https://psv4.vk.me/c812431/u11225888/docs/8ce21f6c354c/giphy_2.gif?extra=t3Ie902pKXnkE960R1LcsQhhlwkhwhfR_MdMsf7NiF2CslSR9piV84xMpauAcpYJQY61pE-akMQl8DdW_QP6ohfV6d1ocklyuNznIx1UR0dgWNGuMDlq)
-
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
