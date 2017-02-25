@@ -27,6 +27,105 @@ pod "AwesomeSpotlightView"
 * Just drop AwesomeSpotlightView folder in your project.
 * You're ready to use AwesomeSpotlightView!
 
+## Usage
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .Circle, text: "spotlight1")
+    let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 20, y: 200, width: 130, height: 25), shape: .Rectangle, text: "spotlight2")
+    let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100) shape: .RoundRectangle, text: "spotlight3")
+    
+    let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3])
+    spotlightView.cutoutRadius = 8
+    spotlightView.delegate = self
+    view.addSubview(spotlightView)
+    spotlightView.start()
+}
+```
+
+You can configure AwesomeSpotlightView before you present it using the `start` method. For example:
+
+```objective-c
+spotlightView.enableContinueLabel = true
+spotlightView.enableSkipButton = true
+spotlightView.showAllSpotlightsAtOnce = false
+spotlightView.start()
+```
+
+## Configuration
+
+### `spotlightsArray` ([AwesomeSpotlight])
+
+Modify the spotlights.
+
+### `spotlightMaskColor` (UIColor)
+
+The color of the mask (default: 0,0,0 alpha 0.6).
+
+### `animationDuration` (Double)
+
+Transition animation duration to the next coach mark (default: 0.3).
+
+### `cutoutRadius` (CGFloat)
+
+The cutout rectangle radius (default: 4.0).
+
+### `maxLabelWidth` (Double)
+
+The captions label is set to have a max width of 280px. Number of lines is figured out automatically based on caption contents.
+
+### `labelSpacing` (CGFloat)
+
+Define how far the captions label appears above or below the cutout (default: 35px).
+
+### `enableContinueLabel` (Bool)
+
+'Tap to continue' label pops up by default to guide the user at the first spotlight (default: false).
+
+### `enableSkipButton` (Bool)
+
+'Skip' label pops up by default to guide the user at the first spotlight (default: false).
+
+### `enableArrowDown` (Bool)
+
+Icon with Arrow showed between caption text and caption (default: false).
+
+### `textLabelFont` (UIFont)
+
+Fond of caption text label (default: UIFont.systemFont(ofSize: 20.0)).
+
+### `continueLabelFont` (UIFont)
+
+Fond of continue label (default: UIFont.systemFont(ofSize: 13.0)).
+
+### `skipButtonFont` (UIFont)
+
+Fond of skip button (default: UIFont.boldSystemFont(ofSize: 13.0)).
+
+### `showAllSpotlightsAtOnce` (Bool)
+
+Showed all spotlight at once (at the same time) (default: false).
+
+## AwesomeSpotlightViewDelegate
+
+### 1. Conform your view controller to the AwesomeSpotlightViewDelegate protocol:
+
+`class ViewController: UIViewController, AwesomeSpotlightViewDelegate`
+
+### 2. Assign the delegate to your AwesomeSpotlightView view instance:
+
+`spotlightView.delegate = self
+
+### 3. Implement the delegate protocol methods:
+
+*Note: All of the methods are optional. Implement only those that are needed.*
+
+- `func spotlightView(spotlightView : AwesomeSpotlightView, willNavigateToIndex index: Int)`
+- `func spotlightView(spotlightView : AwesomeSpotlightView, didNavigateToIndex index: Int)`
+- `func spotlightViewWillCleanup(spotlightView : AwesomeSpotlightView)`
+- `func spotlightViewDidCleanup(spotlightView : AwesomeSpotlightView)`
+
 ## Inspired by
 * [WSCoachMarksView](https://github.com/workshirt/WSCoachMarksView)
 
