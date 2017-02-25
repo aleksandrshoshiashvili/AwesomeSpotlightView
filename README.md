@@ -34,7 +34,7 @@ override func viewDidLoad() {
     super.viewDidLoad()
     let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .Circle, text: "spotlight1")
     let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 20, y: 200, width: 130, height: 25), shape: .Rectangle, text: "spotlight2")
-    let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100) shape: .RoundRectangle, text: "spotlight3")
+    let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100), shape: .RoundRectangle, text: "spotlight3")
     
     let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3])
     spotlightView.cutoutRadius = 8
@@ -54,11 +54,6 @@ spotlightView.start()
 ```
 
 ## Configuration AwesomeSpotlight
-
-var rect = CGRect()
-  var shape : AwesomeSpotlightShape = .RoundRectangle
-  private var text : String = ""
-  private var attributedText : AttributedString? = nil
 
 ### `rect` (CGRect)
 
