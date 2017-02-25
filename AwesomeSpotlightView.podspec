@@ -82,7 +82,7 @@ AwesomeSpotlightView is a nice and simple library for iOS. It's highly customiza
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/AwesomeSpotlightView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
