@@ -7,109 +7,22 @@
 #
 
 Pod::Spec.new do |s|
+  s.name             = 'AwesomeSpotlightView'
+  s.version          = '0.1.0'
+  s.summary          = 'Awesome tool for create tutorial or coach tour'
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
+   s.description      = <<-DESC
+Awesome TextField is a nice and simple library for iOS and Mac OSX. It's highly customizable and easy-to-use tool. Works perfectly for any registration or login forms in your app.
+                       DESC
 
-  s.name         = "AwesomeSpotlightView"
-  s.version      = "0.0.1"
-  s.summary      = "AwesomeSpotlightView is a awesome coach marks view or tutoria with great animation."
-
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-
-AwesomeSpotlightView is a nice and simple library for iOS. It's highly customizable and easy-to-use tool. Works perfectly for coach and tutorial.
-                   DESC
-
-  s.homepage     = "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See http://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
+  s.homepage         = 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aleksandrshoshishvili' => 'aleksandr.shoshishvili@gmail.com' }
   s.source           = { :git => 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git', :tag => 'v0.1.0' }
 
+  s.ios.deployment_target = '8.0'
 
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
-
-  s.author             = { "alexsho" => "aleksandr.shoshiashvili@gmail.com" }
-  # Or just: s.author    = "alexsho"
-  # s.authors            = { "alexsho" => "aleksandr.shoshiashvili@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/alexsho"
-
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  s.ios.deployment_target = "8.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
-
-
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
-  s.source       = { :git => "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git", :tag => "#{s.version}" }
-
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
-  s.source_files  = "AwesomeSpotlightView/Classes/**/*"
-  #s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
-
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
-
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
+  s.source_files  = 'AwesomeSpotlightView/Classes/**/*'
 
 end
