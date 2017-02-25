@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jbn-RX-XwF">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="PEC-Ro-3V3">
+            <objects>
+                <viewController id="Jbn-RX-XwF" customClass="ViewController" customModule="AwesomeSpotlightViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sNm-tt-DNy"/>
+                        <viewControllerLayoutGuide type="bottom" id="f92-iX-Nml"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2U7-1U-pkd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AwesomeSpotlightView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW2-dd-8cT">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotlight" translatesAutoresizingMaskIntoConstraints="NO" id="YpP-PH-rcS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CeU-Sw-XCX"/>
+                                    <constraint firstAttribute="width" constant="50" id="RR5-QF-1To"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiW-JV-0Xu">
+                                <color key="backgroundColor" red="0.2060487449" green="0.26086249160000002" blue="0.61514008620000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ea4-WD-5Sz"/>
+                                    <constraint firstAttribute="width" constant="343" id="KvZ-ah-fBn"/>
+                                </constraints>
+                                <state key="normal" title="Show with continue and skip buttons">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleShowWithContinueAndSkipAction:" destination="Jbn-RX-XwF" eventType="touchUpInside" id="ItP-1r-acw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue7-mt-Rpy">
+                                <color key="backgroundColor" red="0.2060487449" green="0.26086249160000002" blue="0.61514008620000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="0QT-Uw-ZgW"/>
+                                    <constraint firstAttribute="height" constant="50" id="x5s-VU-g4n"/>
+                                </constraints>
+                                <state key="normal" title="Show all at once">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleShowAllAtOnceAction:" destination="Jbn-RX-XwF" eventType="touchUpInside" id="8Bn-fM-jUQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAt-ZM-Dpl">
+                                <color key="backgroundColor" red="0.2060487449" green="0.26086249160000002" blue="0.61514008620000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PhU-DA-Ich"/>
+                                    <constraint firstAttribute="width" constant="343" id="z9N-FI-b72"/>
+                                </constraints>
+                                <state key="normal" title="Show">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleShowAction:" destination="Jbn-RX-XwF" eventType="touchUpInside" id="dqE-4W-hEK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.43137254899999999" blue="0.69411764710000001" alpha="0.65899268619999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ue7-mt-Rpy" firstAttribute="top" secondItem="wiW-JV-0Xu" secondAttribute="bottom" constant="8" symbolic="YES" id="0Ti-0e-eQ1"/>
+                            <constraint firstItem="YpP-PH-rcS" firstAttribute="bottom" secondItem="HW2-dd-8cT" secondAttribute="bottom" id="2gz-3a-T7B"/>
+                            <constraint firstItem="YpP-PH-rcS" firstAttribute="centerY" secondItem="2U7-1U-pkd" secondAttribute="centerY" id="3jI-t9-Zbu"/>
+                            <constraint firstItem="YpP-PH-rcS" firstAttribute="top" secondItem="HW2-dd-8cT" secondAttribute="top" id="GmB-0S-a3v"/>
+                            <constraint firstItem="HW2-dd-8cT" firstAttribute="trailing" secondItem="2U7-1U-pkd" secondAttribute="trailingMargin" id="ak5-8T-dXY"/>
+                            <constraint firstItem="YpP-PH-rcS" firstAttribute="leading" secondItem="2U7-1U-pkd" secondAttribute="leadingMargin" id="djd-x5-s96"/>
+                            <constraint firstItem="yAt-ZM-Dpl" firstAttribute="centerX" secondItem="2U7-1U-pkd" secondAttribute="centerX" id="e7D-d3-bGe"/>
+                            <constraint firstAttribute="bottom" secondItem="ue7-mt-Rpy" secondAttribute="bottom" constant="20" symbolic="YES" id="jlC-w6-fFC"/>
+                            <constraint firstItem="wiW-JV-0Xu" firstAttribute="top" secondItem="yAt-ZM-Dpl" secondAttribute="bottom" constant="8" symbolic="YES" id="kZZ-IC-Ny0"/>
+                            <constraint firstItem="HW2-dd-8cT" firstAttribute="leading" secondItem="YpP-PH-rcS" secondAttribute="trailing" constant="8" symbolic="YES" id="pXo-D3-BLl"/>
+                            <constraint firstItem="yAt-ZM-Dpl" firstAttribute="leading" secondItem="wiW-JV-0Xu" secondAttribute="leading" id="rck-jH-IfU"/>
+                            <constraint firstItem="wiW-JV-0Xu" firstAttribute="leading" secondItem="ue7-mt-Rpy" secondAttribute="leading" id="saq-Wt-QV4"/>
+                            <constraint firstItem="wiW-JV-0Xu" firstAttribute="trailing" secondItem="ue7-mt-Rpy" secondAttribute="trailing" id="ti7-w6-rca"/>
+                            <constraint firstItem="yAt-ZM-Dpl" firstAttribute="trailing" secondItem="wiW-JV-0Xu" secondAttribute="trailing" id="wba-7m-YiL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="YpP-PH-rcS" id="bxG-ih-2ZU"/>
+                        <outlet property="nameLabel" destination="HW2-dd-8cT" id="LkI-4P-B3A"/>
+                        <outlet property="showAllAtOnceButton" destination="ue7-mt-Rpy" id="eCs-gM-l2u"/>
+                        <outlet property="showButton" destination="yAt-ZM-Dpl" id="PgN-U0-Svl"/>
+                        <outlet property="showWithContinueAndSkipButton" destination="wiW-JV-0Xu" id="cCh-PW-8bY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ay8-I1-2Td" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="spotlight" width="96" height="96"/>
+    </resources>
+</document>
