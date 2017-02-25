@@ -32,7 +32,7 @@ class AwesomeSpotlightView: UIView {
   private static let kShowAllSpotlightsAtOnce = false
   private static let kTextLabelFont = UIFont.systemFont(ofSize: 20.0)
   private static let kContinueLabelFont = UIFont.systemFont(ofSize: 13.0)
-  private static let kSkipLabelFont = UIFont.boldSystemFont(ofSize: 13.0)
+  private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
   
   private var spotlightMask = CAShapeLayer()
   private var currentIndex = 0
@@ -55,7 +55,7 @@ class AwesomeSpotlightView: UIView {
   var enableArrowDown = kEnableArrowDown
   var textLabelFont = kTextLabelFont
   var continueLabelFont = kContinueLabelFont
-  var skipLabelFont = kSkipLabelFont
+  var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
   
   // MARK: - Initializers
@@ -138,7 +138,7 @@ class AwesomeSpotlightView: UIView {
     skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
     skipSpotlightButton.addTarget(self, action: #selector(AwesomeSpotlightView.skipSpotlight), for: .touchUpInside)
     skipSpotlightButton.setTitle("Skip".localized, for: [])
-    skipSpotlightButton.titleLabel?.font = skipLabelFont
+    skipSpotlightButton.titleLabel?.font = skipButtonFont
     skipSpotlightButton.alpha = 0
     skipSpotlightButton.tintColor = .white()
     addSubview(skipSpotlightButton)
