@@ -20,7 +20,7 @@ AwesomeSpotlightView is a nice and simple library for iOS. It's highly customiza
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aleksandrshoshishvili' => 'aleksandr.shoshishvili@gmail.com' }
   s.source           = { :git => 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git', :tag => '0.1.0' }
-  s.platform     = :ios
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.source_files  = 'AwesomeSpotlightView/Classes/**/*'
   s.framework  = 'UIKit'
