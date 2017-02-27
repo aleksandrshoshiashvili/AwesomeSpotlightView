@@ -23,5 +23,6 @@ AwesomeSpotlightView is a nice and simple library for iOS. It's highly customiza
   s.platform     = :ios
   s.requires_arc = true
   s.source_files  = 'AwesomeSpotlightView/Classes/**/*'
+  s.framework  = 'UIKit'
 
 end
