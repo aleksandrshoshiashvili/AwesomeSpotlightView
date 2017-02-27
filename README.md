@@ -1,5 +1,13 @@
+<p align="center">
 <img src="https://pp.vk.me/c604720/v604720888/37813/os4AzOREBAY.jpg" width="600px"></img>
+</p>
 
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat" alt="Platform: iOS 9+" />
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift3-f48041.svg?style=flat" alt="Language: Swift 3" /></a>
+    <a href="https://cocoapods.org/pods/AwesomeSpotlightView"><img src="https://cocoapod-badges.herokuapp.com/v/AwesomeSpotlightView/badge.png" alt="Cocoapods compatible" /></a>
+    <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT" />
+</p>
  
 
 AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
