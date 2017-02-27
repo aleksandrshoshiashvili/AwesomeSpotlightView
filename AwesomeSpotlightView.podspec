@@ -8,21 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeSpotlightView'
-  s.version          = '0.1.0'
-  s.summary          = 'Awesome tool for create tutorial or coach tour'
+  s.version          = 'v0.1.0'
+  s.summary          = 'Awesome tool for create tutorial or education tour'
 
    s.description      = <<-DESC
-Awesome TextField is a nice and simple library for iOS and Mac OSX. It's highly customizable and easy-to-use tool. Works perfectly for any registration or login forms in your app.
+AwesomeSpotlightView is a nice and simple library for iOS. It's highly customizable and easy-to-use tool. Works perfectly for any tutorial or education in your app.
                        DESC
 
   s.homepage         = 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://camo.githubusercontent.com/c6e4c54f8baa8c55283e027711a98e0cd72964ab/68747470733a2f2f70702e766b2e6d652f633630343732302f763630343732303838382f33373831332f6f7334417a4f52454241592e6a7067'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aleksandrshoshishvili' => 'aleksandr.shoshishvili@gmail.com' }
   s.source           = { :git => 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git', :tag => 'v0.1.0' }
-
-  s.ios.deployment_target = '8.0'
-
+  s.platform     = :ios
+  s.requires_arc = true
   s.source_files  = 'AwesomeSpotlightView/Classes/**/*'
 
 end
