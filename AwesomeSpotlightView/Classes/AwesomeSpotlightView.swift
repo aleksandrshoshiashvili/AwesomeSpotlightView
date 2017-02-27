@@ -35,7 +35,6 @@ class AwesomeSpotlightView: UIView {
   private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
   
   private var spotlightMask = CAShapeLayer()
-  private var currentIndex = 0
   private var continueLabel = UILabel()
   private var skipSpotlightButton = UIButton()
   private var arrowDownImageView = UIImageView()
@@ -57,6 +56,8 @@ class AwesomeSpotlightView: UIView {
   var continueLabelFont = kContinueLabelFont
   var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
+  
+  var currentIndex = 0
   
   // MARK: - Initializers
   
@@ -98,8 +99,8 @@ class AwesomeSpotlightView: UIView {
   
   private func setupTextLabel() {
     textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: maxLabelWidth, height: 0))
-    textLabel.backgroundColor = .clear()
-    textLabel.textColor = .white()
+    textLabel.backgroundColor = .clear
+    textLabel.textColor = .white
     textLabel.font = textLabelFont
     textLabel.lineBreakMode = .byWordWrapping
     textLabel.numberOfLines = 0
@@ -109,8 +110,8 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func setupArrowDown() {
-    if let bundlePath = Bundle.main().pathForResource("AweosmeSpotlightViewBundle", ofType: "bundle") {
-      if let _ = Bundle(path: bundlePath)?.pathForResource("arrowDownIcon", ofType: "png") {
+    if let bundlePath = Bundle.main.path(forResource: "AwesomeSpotlightViewBundle", ofType: "bundle") {
+      if let _ = Bundle(path: bundlePath)?.path(forResource: "arrowDownIcon", ofType: "png") {
         let arrowDownImage = UIImage(named: "arrowDownIcon", in: Bundle(path: bundlePath), compatibleWith: nil)
         arrowDownImageView = UIImageView(image: arrowDownImage)
         arrowDownImageView.alpha = 0
@@ -127,7 +128,7 @@ class AwesomeSpotlightView: UIView {
     continueLabel.textAlignment = .center
     continueLabel.text = "Continue".localized
     continueLabel.alpha = 0
-    continueLabel.backgroundColor = .white()
+    continueLabel.backgroundColor = .white
     addSubview(continueLabel)
   }
   
@@ -140,7 +141,7 @@ class AwesomeSpotlightView: UIView {
     skipSpotlightButton.setTitle("Skip".localized, for: [])
     skipSpotlightButton.titleLabel?.font = skipButtonFont
     skipSpotlightButton.alpha = 0
-    skipSpotlightButton.tintColor = .white()
+    skipSpotlightButton.tintColor = .white
     addSubview(skipSpotlightButton)
   }
   
@@ -370,7 +371,7 @@ class AwesomeSpotlightView: UIView {
 }
 
 extension AwesomeSpotlightView : CAAnimationDelegate {
-  override func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+  func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     delegate?.spotlightView?(spotlightView: self, didNavigateToIndex: currentIndex)
   }
 }

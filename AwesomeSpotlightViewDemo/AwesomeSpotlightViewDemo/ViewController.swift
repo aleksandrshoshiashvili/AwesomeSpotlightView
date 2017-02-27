@@ -26,9 +26,7 @@ class ViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
     setupSpotlight()
-    
   }
   
   override func didReceiveMemoryWarning() {

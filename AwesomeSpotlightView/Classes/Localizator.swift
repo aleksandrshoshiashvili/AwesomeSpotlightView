@@ -13,13 +13,8 @@ private class Localizator {
   
   lazy var localizableDictionary: NSDictionary! = {
     
-    //NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"AquarianHarp" ofType:@"bundle"];
-    //NSString *imageName = [[NSBundle bundleWithPath:bundlePath] pathForResource:@"trebleclef2" ofType:@"png"];
-    
-    //AweosmeSpotlightViewBundle
-    
-    if let bundlePath = Bundle.main().pathForResource("AweosmeSpotlightViewBundle", ofType: "bundle") {
-      if let path = Bundle(path: bundlePath)?.pathForResource("Localizable", ofType: "plist") {
+    if let bundlePath = Bundle.main.path(forResource: "AwesomeSpotlightViewBundle", ofType: "bundle") {
+      if let path = Bundle(path: bundlePath)?.path(forResource: "Localizable", ofType: "plist") {
         return NSDictionary(contentsOfFile: path)
       }
     }
@@ -27,7 +22,8 @@ private class Localizator {
   }()
   
   func localize(string: String) -> String {
-    guard let localizedString = localizableDictionary.value(forKey: "Buttons")?.value(forKey: string)?.value(forKey: "value") as? String else {
+    
+    guard let localizedString = ((localizableDictionary.value(forKey: "Buttons") as AnyObject).value(forKey: string) as AnyObject).value(forKey: "value") as? String else {
       assertionFailure("Missing translation for: \(string)")
       return ""
     }

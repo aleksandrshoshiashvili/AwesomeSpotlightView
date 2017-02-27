@@ -21,13 +21,13 @@ class AwesomeSpotlight: NSObject {
   var rect = CGRect()
   var shape : AwesomeSpotlightShape = .RoundRectangle
   private var text : String = ""
-  private var attributedText : AttributedString? = nil
+  private var attributedText : NSAttributedString? = nil
   
-  var showedText: AttributedString {
+  var showedText: NSAttributedString {
     if let attrText = attributedText {
       return attrText
     } else {
-      return AttributedString(string: text)
+      return NSAttributedString(string: text)
     }
   }
   
@@ -42,7 +42,7 @@ class AwesomeSpotlight: NSObject {
     self.text = text
   }
   
-  init(withRect rect: CGRect, shape: AwesomeSpotlightShape, attributedText: AttributedString) {
+  init(withRect rect: CGRect, shape: AwesomeSpotlightShape, attributedText: NSAttributedString) {
     super.init()
     self.rect = rect
     self.shape = shape
