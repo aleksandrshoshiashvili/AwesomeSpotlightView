@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeSpotlightView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Awesome tool for create tutorial or education tour'
 
    s.description     = <<-DESC
@@ -19,13 +19,12 @@ AwesomeSpotlightView is a nice and simple library for iOS. It's highly customiza
   s.screenshots      = 'https://camo.githubusercontent.com/c6e4c54f8baa8c55283e027711a98e0cd72964ab/68747470733a2f2f70702e766b2e6d652f633630343732302f763630343732303838382f33373831332f6f7334417a4f52454241592e6a7067'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aleksandrshoshishvili' => 'aleksandr.shoshishvili@gmail.com' }
-  s.source           = { :git => 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git', :tag => '0.1.0' }
+  s.source           = { :git => 'https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git', :tag => '0.1.1' }
   s.platform         = :ios, '9.0'
   s.requires_arc     = true
   s.source_files     = 'AwesomeSpotlightView/Classes/**/*'
   s.resource         = "AwesomeSpotlightView/Classes/AwesomeSpotlightViewBundle.bundle"
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
   s.framework  = 'UIKit', 'Foundation'
 
 end
