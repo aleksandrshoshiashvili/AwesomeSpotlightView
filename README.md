@@ -13,6 +13,13 @@ AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. I
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
+### CocoaPods
+AwesomeSpotlightView is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "AwesomeSpotlightView"
+```
 ### Manually
 
 * Just drop AwesomeSpotlightView folder in your project.
