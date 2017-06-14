@@ -146,20 +146,21 @@ class AwesomeSpotlightView: UIView {
   }
   
   // MARK: - Touches
-
+  
   func userDidTap(_ recognizer: UITapGestureRecognizer) {
     goToSpotlightAtIndex(index: currentIndex + 1)
   }
   
   // MARK: - Presenter
-
+  
   func start() {
     alpha = 0
     isHidden = false
+    textLabel.font = textLabelFont
     UIView.animate(withDuration: animationDuration, animations: {
       self.alpha = 1
-      }) { (finished) in
-        self.goToFirstSpotlight()
+    }) { (finished) in
+      self.goToFirstSpotlight()
     }
   }
   
@@ -231,7 +232,7 @@ class AwesomeSpotlightView: UIView {
         setupContinueLabel()
         UIView.animate(withDuration: animationDuration, delay: 0.35, options: .curveLinear, animations: {
           self.continueLabel.alpha = 1
-          }, completion: nil)
+        }, completion: nil)
       } else if index >= spotlightsArray.count - 1 && continueLabel.alpha != 0 {
         continueLabel.alpha = 0
         continueLabel.removeFromSuperview()
@@ -244,7 +245,7 @@ class AwesomeSpotlightView: UIView {
       setupSkipSpotlightButton()
       UIView.animate(withDuration: animationDuration, delay: 0.35, options: .curveLinear, animations: {
         self.skipSpotlightButton.alpha = 1
-        }, completion: nil)
+      }, completion: nil)
     }
   }
   
@@ -258,6 +259,18 @@ class AwesomeSpotlightView: UIView {
   
   // MARK: Helper
   
+  private func calculateRectWithMarginForSpotlight(_ spotlight: AwesomeSpotlight) -> CGRect {
+    var rect = spotlight.rect
+    
+    rect.size.width += spotlight.margin.left + spotlight.margin.right
+    rect.size.height += spotlight.margin.bottom + spotlight.margin.top
+    
+    rect.origin.x = rect.origin.x - (spotlight.margin.left + spotlight.margin.right) / 2.0
+    rect.origin.y = rect.origin.y - (spotlight.margin.top + spotlight.margin.bottom) / 2.0
+    
+    return rect
+  }
+  
   private func calculateTextPositionAndSizeWithSpotlight(spotlight: AwesomeSpotlight) {
     textLabel.frame = CGRect(x: 0, y: 0, width: maxLabelWidth, height: 0)
     textLabel.attributedText = spotlight.showedText
@@ -268,7 +281,8 @@ class AwesomeSpotlightView: UIView {
     
     textLabel.sizeToFit()
     
-    let rect = spotlight.rect
+    let rect = calculateRectWithMarginForSpotlight(spotlight)
+    
     var y = rect.origin.y + rect.size.height + labelSpacing
     let bottomY = y + textLabel.frame.size.height + labelSpacing
     if bottomY > bounds.size.height {
@@ -282,7 +296,7 @@ class AwesomeSpotlightView: UIView {
   // MARK: - Cutout and Animate
   
   private func cutoutToSpotlight(spotlight: AwesomeSpotlight, isFirst : Bool = false) -> UIBezierPath {
-    var rect = spotlight.rect
+    var rect = calculateRectWithMarginForSpotlight(spotlight)
     
     if isFirst {
       let x = floor(spotlight.rect.origin.x + (spotlight.rect.size.width / 2.0))
@@ -358,13 +372,13 @@ class AwesomeSpotlightView: UIView {
     delegate?.spotlightViewWillCleanup?(spotlightView: self)
     UIView.animate(withDuration: animationDuration, animations: {
       self.alpha = 0
-      }) { (finished) in
-        self.removeFromSuperview()
-        self.currentIndex = 0
-        self.textLabel.alpha = 0
-        self.continueLabel.alpha = 0
-        self.skipSpotlightButton.alpha = 0
-        self.delegate?.spotlightViewDidCleanup?(spotlightView: self)
+    }) { (finished) in
+      self.removeFromSuperview()
+      self.currentIndex = 0
+      self.textLabel.alpha = 0
+      self.continueLabel.alpha = 0
+      self.skipSpotlightButton.alpha = 0
+      self.delegate?.spotlightViewDidCleanup?(spotlightView: self)
     }
   }
   

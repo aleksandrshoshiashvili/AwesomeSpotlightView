@@ -45,11 +45,16 @@ class ViewController: UIViewController {
   }
   
   func setupSpotlight() {
-    let logoImageViewSpotlightRect = CGRect(x: logoImageView.frame.origin.x - 10, y: logoImageView.frame.origin.y - 10, width: logoImageView.frame.size.width + 18, height: logoImageView.frame.size.height + 18)
-    let logoImageViewSpotlight = AwesomeSpotlight(withRect: logoImageViewSpotlightRect, shape: .Circle, text: "logoImageViewSpotlight")
+    let logoImageViewSpotlightRect = CGRect(x: logoImageView.frame.origin.x, y: logoImageView.frame.origin.y, width: logoImageView.frame.size.width, height: logoImageView.frame.size.height)
+    let logoImageViewSpotlightMargin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    let logoImageViewSpotlight = AwesomeSpotlight(withRect: logoImageViewSpotlightRect, shape: .Circle, text: "logoImageViewSpotlight", margin: logoImageViewSpotlightMargin)
+    
     let nameLabelSpotlight = AwesomeSpotlight(withRect: nameLabel.frame, shape: .Rectangle, text: "nameLabelSpotlight")
+    
     let showButtonSpotSpotlight = AwesomeSpotlight(withRect: showButton.frame, shape: .RoundRectangle, text: "showButtonSpotSpotlight")
+    
     let showWithContinueAndSkipButtonSpotlight = AwesomeSpotlight(withRect: showWithContinueAndSkipButton.frame, shape: .RoundRectangle, text: "showWithContinueAndSkipButtonSpotlight")
+    
     let showAllAtOnceButtonSpotlight = AwesomeSpotlight(withRect: showAllAtOnceButton.frame, shape: .RoundRectangle, text: "showAllAtOnceButtonSpotlight")
     
     spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [logoImageViewSpotlight, nameLabelSpotlight, showButtonSpotSpotlight, showWithContinueAndSkipButtonSpotlight, showAllAtOnceButtonSpotlight])
