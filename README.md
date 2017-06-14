@@ -12,9 +12,9 @@
 
 AwesomeSpotlightView is a nice and simple libriary for iOS written on Swift 3. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
 
-![icon](https://psv4.userapi.com/c812529/u11225888/docs/24d977f704fe/giphy.gif?extra=BO5bKXtluvfvg-M3o_nYX04Yjni-SigqmTs9ezGH_LcZJO05QGnVFw7iuSlEgAG-R6ycVRQiiOjeNIzV3ng4qE3V-VfcsH_rbjnv8XdYng6Ey1NDAMg)
+![icon](https://s8.hostingkartinok.com/uploads/images/2017/06/2de205e60758e2d620c8a9a4621f9e75.gif)
 
-![icon](https://psv4.userapi.com/c812520/u11225888/docs/741285974784/giphy_1.gif?extra=pNjSvZ5EHqhG2E6vT0GDix6PIDbrk4LLDtP_W3TKtMGSplDnzcsM8aRg_W4rOwXC1BbAGqxK7RDM5-DKUW_hoUd97PbHi7vIfUlexf3NtKgQ83ACsWk)
+![icon](https://s8.hostingkartinok.com/uploads/images/2017/06/0bb7ff8437aac08c335f1074ef990d4e.gif)
 
 ## Example
 
