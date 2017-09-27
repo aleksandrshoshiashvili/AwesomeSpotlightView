@@ -47,15 +47,15 @@ class ViewController: UIViewController {
   func setupSpotlight() {
     let logoImageViewSpotlightRect = CGRect(x: logoImageView.frame.origin.x, y: logoImageView.frame.origin.y, width: logoImageView.frame.size.width, height: logoImageView.frame.size.height)
     let logoImageViewSpotlightMargin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-    let logoImageViewSpotlight = AwesomeSpotlight(withRect: logoImageViewSpotlightRect, shape: .Circle, text: "logoImageViewSpotlight", margin: logoImageViewSpotlightMargin)
+    let logoImageViewSpotlight = AwesomeSpotlight(withRect: logoImageViewSpotlightRect, shape: .circle, text: "logoImageViewSpotlight", margin: logoImageViewSpotlightMargin)
     
-    let nameLabelSpotlight = AwesomeSpotlight(withRect: nameLabel.frame, shape: .Rectangle, text: "nameLabelSpotlight")
+    let nameLabelSpotlight = AwesomeSpotlight(withRect: nameLabel.frame, shape: .rectangle, text: "nameLabelSpotlight")
     
-    let showButtonSpotSpotlight = AwesomeSpotlight(withRect: showButton.frame, shape: .RoundRectangle, text: "showButtonSpotSpotlight")
+    let showButtonSpotSpotlight = AwesomeSpotlight(withRect: showButton.frame, shape: .roundRectangle, text: "showButtonSpotSpotlight")
     
-    let showWithContinueAndSkipButtonSpotlight = AwesomeSpotlight(withRect: showWithContinueAndSkipButton.frame, shape: .RoundRectangle, text: "showWithContinueAndSkipButtonSpotlight")
+    let showWithContinueAndSkipButtonSpotlight = AwesomeSpotlight(withRect: showWithContinueAndSkipButton.frame, shape: .roundRectangle, text: "showWithContinueAndSkipButtonSpotlight")
     
-    let showAllAtOnceButtonSpotlight = AwesomeSpotlight(withRect: showAllAtOnceButton.frame, shape: .RoundRectangle, text: "showAllAtOnceButtonSpotlight")
+    let showAllAtOnceButtonSpotlight = AwesomeSpotlight(withRect: showAllAtOnceButton.frame, shape: .roundRectangle, text: "showAllAtOnceButtonSpotlight")
     
     spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [logoImageViewSpotlight, nameLabelSpotlight, showButtonSpotSpotlight, showWithContinueAndSkipButtonSpotlight, showAllAtOnceButtonSpotlight])
     spotlightView.cutoutRadius = 8
@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = false
     spotlightView.enableSkipButton = false
     spotlightView.showAllSpotlightsAtOnce = false
+    spotlightView.isAllowPassTouchesThroughSpotlight = true
     spotlightView.start()
   }
   @IBAction func handleShowWithContinueAndSkipAction(_ sender: AnyObject) {
@@ -76,6 +77,7 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = true
     spotlightView.enableSkipButton = true
     spotlightView.showAllSpotlightsAtOnce = false
+    spotlightView.isAllowPassTouchesThroughSpotlight = false
     spotlightView.start()
   }
   @IBAction func handleShowAllAtOnceAction(_ sender: AnyObject) {
@@ -83,6 +85,7 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = false
     spotlightView.enableSkipButton = false
     spotlightView.showAllSpotlightsAtOnce = true
+    spotlightView.isAllowPassTouchesThroughSpotlight = false
     spotlightView.start()
   }
   
@@ -90,19 +93,19 @@ class ViewController: UIViewController {
 
 extension ViewController : AwesomeSpotlightViewDelegate {
   
-  func spotlightView(spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int) {
+  func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int) {
     print("spotlightView willNavigateToIndex index = \(index)")
   }
   
-  func spotlightView(spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int) {
+  func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int) {
     print("spotlightView didNavigateToIndex index = \(index)")
   }
   
-  func spotlightViewWillCleanup(spotlightView: AwesomeSpotlightView) {
-    print("spotlightViewWillCleanup")
+  func spotlightViewWillCleanup(_ spotlightView: AwesomeSpotlightView, atIndex index: Int) {
+    print("spotlightViewWillCleanup atIndex = \(index)")
   }
   
-  func spotlightViewDidCleanup(spotlightView: AwesomeSpotlightView) {
+  func spotlightViewDidCleanup(_ spotlightView: AwesomeSpotlightView) {
     print("spotlightViewDidCleanup")
   }
   

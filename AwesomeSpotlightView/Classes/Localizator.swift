@@ -2,7 +2,8 @@
 //  Localizator.swift
 //  AwesomeSpotlightView
 //
-//  Created by David Cordero, Alex Shoshiashvili
+//  Created by David Cordero 
+//  Update by Alex Shoshiashvili
 //  https://medium.com/@dcordero/a-different-way-to-deal-with-localized-strings-in-swift-3ea0da4cd143#.b863b9n1q
 
 import Foundation

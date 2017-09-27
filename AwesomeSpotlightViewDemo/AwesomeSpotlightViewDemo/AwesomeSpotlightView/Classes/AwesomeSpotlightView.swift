@@ -7,13 +7,12 @@
 //
 
 import UIKit
-//import QuartzCore
 
 @objc protocol AwesomeSpotlightViewDelegate {
-  @objc optional func spotlightView(spotlightView : AwesomeSpotlightView, willNavigateToIndex index: Int)
-  @objc optional func spotlightView(spotlightView : AwesomeSpotlightView, didNavigateToIndex index: Int)
-  @objc optional func spotlightViewWillCleanup(spotlightView : AwesomeSpotlightView)
-  @objc optional func spotlightViewDidCleanup(spotlightView : AwesomeSpotlightView)
+  @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int)
+  @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int)
+  @objc optional func spotlightViewWillCleanup(_ spotlightView: AwesomeSpotlightView, atIndex index: Int)
+  @objc optional func spotlightViewDidCleanup(_ spotlightView: AwesomeSpotlightView)
 }
 
 class AwesomeSpotlightView: UIView {
@@ -39,10 +38,12 @@ class AwesomeSpotlightView: UIView {
   private var skipSpotlightButton = UIButton()
   private var arrowDownImageView = UIImageView()
   private var arrowDownSize = CGSize(width: 12, height: 18)
+  private var delayTime: TimeInterval = 0.35
+  private var hitTestPoints: [CGPoint] = []
   
   // MARK: - public variables
   
-  var spotlightsArray = [AwesomeSpotlight]()
+  var spotlightsArray: [AwesomeSpotlight] = []
   var textLabel = UILabel()
   var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
   var animationDuration = kAnimationDuration
@@ -56,6 +57,11 @@ class AwesomeSpotlightView: UIView {
   var continueLabelFont = kContinueLabelFont
   var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
+  var isAllowPassTouchesThroughSpotlight = false
+  
+  var isShowed: Bool {
+    return currentIndex != 0
+  }
   
   var currentIndex = 0
   
@@ -98,7 +104,8 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func setupTextLabel() {
-    textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: maxLabelWidth, height: 0))
+    let textLabelRect = CGRect(x: 0, y: 0, width: maxLabelWidth, height: 0)
+    textLabel = UILabel(frame: textLabelRect)
     textLabel.backgroundColor = .clear
     textLabel.textColor = .white
     textLabel.font = textLabelFont
@@ -110,9 +117,10 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func setupArrowDown() {
+    let arrowDownIconName = "arrowDownIcon"
     if let bundlePath = Bundle.main.path(forResource: "AwesomeSpotlightViewBundle", ofType: "bundle") {
-      if let _ = Bundle(path: bundlePath)?.path(forResource: "arrowDownIcon", ofType: "png") {
-        let arrowDownImage = UIImage(named: "arrowDownIcon", in: Bundle(path: bundlePath), compatibleWith: nil)
+      if let _ = Bundle(path: bundlePath)?.path(forResource: arrowDownIconName, ofType: "png") {
+        let arrowDownImage = UIImage(named: arrowDownIconName, in: Bundle(path: bundlePath), compatibleWith: nil)
         arrowDownImageView = UIImageView(image: arrowDownImage)
         arrowDownImageView.alpha = 0
         addSubview(arrowDownImageView)
@@ -149,6 +157,28 @@ class AwesomeSpotlightView: UIView {
   
   func userDidTap(_ recognizer: UITapGestureRecognizer) {
     goToSpotlightAtIndex(index: currentIndex + 1)
+  }
+  
+  override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    let view = super.hitTest(point, with: event)
+    let localPoint = convert(point, from: self)
+    hitTestPoints.append(localPoint)
+    
+    guard currentIndex < spotlightsArray.count,
+      isAllowPassTouchesThroughSpotlight else {
+      return view
+    }
+    
+    let currentSpotlightRect = spotlightsArray[currentIndex].rect
+    if currentSpotlightRect.contains(localPoint) {
+      let asyncTime = 0.15
+      DispatchQueue.main.asyncAfter(deadline: .now() + asyncTime, execute: {
+        self.cleanup()
+      })
+      return nil
+    }
+    
+    return view
   }
   
   // MARK: - Presenter
@@ -193,7 +223,7 @@ class AwesomeSpotlightView: UIView {
     
     let currentSpotlight = spotlightsArray[index]
     
-    delegate?.spotlightView?(spotlightView: self, willNavigateToIndex: index)
+    delegate?.spotlightView?(self, willNavigateToIndex: index)
     
     showTextLabel(spotlight: currentSpotlight)
     
@@ -230,9 +260,9 @@ class AwesomeSpotlightView: UIView {
     if enableContinueLabel {
       if index == 0 {
         setupContinueLabel()
-        UIView.animate(withDuration: animationDuration, delay: 0.35, options: .curveLinear, animations: {
+        UIView.animate(withDuration: animationDuration, delay: delayTime, options: .curveLinear, animations: {
           self.continueLabel.alpha = 1
-        }, completion: nil)
+        })
       } else if index >= spotlightsArray.count - 1 && continueLabel.alpha != 0 {
         continueLabel.alpha = 0
         continueLabel.removeFromSuperview()
@@ -243,9 +273,9 @@ class AwesomeSpotlightView: UIView {
   private func showSkipButtonIfNeeded(index: Int) {
     if enableSkipButton && index == 0 {
       setupSkipSpotlightButton()
-      UIView.animate(withDuration: animationDuration, delay: 0.35, options: .curveLinear, animations: {
+      UIView.animate(withDuration: animationDuration, delay: delayTime, options: .curveLinear, animations: {
         self.skipSpotlightButton.alpha = 1
-      }, completion: nil)
+      })
     }
   }
   
@@ -310,11 +340,11 @@ class AwesomeSpotlightView: UIView {
     var cutoutPath = UIBezierPath()
     
     switch spotlight.shape {
-    case .Rectangle:
+    case .rectangle:
       cutoutPath = UIBezierPath(rect: rect)
-    case .RoundRectangle:
+    case .roundRectangle:
       cutoutPath = UIBezierPath(roundedRect: rect, cornerRadius: cutoutRadius)
-    case .Circle:
+    case .circle:
       cutoutPath = UIBezierPath(ovalIn: rect)
     }
     
@@ -340,11 +370,11 @@ class AwesomeSpotlightView: UIView {
     for spotlight in spotlights {
       var cutoutPath = UIBezierPath()
       switch spotlight.shape {
-      case .Rectangle:
+      case .rectangle:
         cutoutPath = UIBezierPath(rect: spotlight.rect)
-      case .RoundRectangle:
+      case .roundRectangle:
         cutoutPath = UIBezierPath(roundedRect: spotlight.rect, cornerRadius: cutoutRadius)
-      case .Circle:
+      case .circle:
         cutoutPath = UIBezierPath(ovalIn: spotlight.rect)
       }
       spotlightPath.append(cutoutPath)
@@ -369,16 +399,19 @@ class AwesomeSpotlightView: UIView {
   // MARK: - Cleanup
   
   private func cleanup() {
-    delegate?.spotlightViewWillCleanup?(spotlightView: self)
+    delegate?.spotlightViewWillCleanup?(self, atIndex: currentIndex)
     UIView.animate(withDuration: animationDuration, animations: {
       self.alpha = 0
     }) { (finished) in
-      self.removeFromSuperview()
-      self.currentIndex = 0
-      self.textLabel.alpha = 0
-      self.continueLabel.alpha = 0
-      self.skipSpotlightButton.alpha = 0
-      self.delegate?.spotlightViewDidCleanup?(spotlightView: self)
+      if finished {
+        self.removeFromSuperview()
+        self.currentIndex = 0
+        self.textLabel.alpha = 0
+        self.continueLabel.alpha = 0
+        self.skipSpotlightButton.alpha = 0
+        self.hitTestPoints = []
+        self.delegate?.spotlightViewDidCleanup?(self)
+      }
     }
   }
   
@@ -386,6 +419,6 @@ class AwesomeSpotlightView: UIView {
 
 extension AwesomeSpotlightView : CAAnimationDelegate {
   func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    delegate?.spotlightView?(spotlightView: self, didNavigateToIndex: currentIndex)
+    delegate?.spotlightView?(self, didNavigateToIndex: currentIndex)
   }
 }

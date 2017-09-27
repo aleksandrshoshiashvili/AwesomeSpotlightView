@@ -11,13 +11,13 @@ import UIKit
 class AwesomeSpotlight: NSObject {
   
   enum AwesomeSpotlightShape {
-    case Rectangle
-    case RoundRectangle
-    case Circle
+    case rectangle
+    case roundRectangle
+    case circle
   }
   
   var rect = CGRect()
-  var shape : AwesomeSpotlightShape = .RoundRectangle
+  var shape : AwesomeSpotlightShape = .roundRectangle
   var margin = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
   private var text : String = ""
   private var attributedText : NSAttributedString? = nil
@@ -58,7 +58,7 @@ class AwesomeSpotlight: NSObject {
   }
   
   convenience override init() {
-    self.init(withRect: CGRect(), shape: .RoundRectangle, text: "test", margin: UIEdgeInsets())
+    self.init(withRect: CGRect(), shape: .roundRectangle, text: "", margin: UIEdgeInsets())
   }
   
   
