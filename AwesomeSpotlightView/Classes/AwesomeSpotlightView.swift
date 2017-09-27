@@ -29,6 +29,7 @@ class AwesomeSpotlightView: UIView {
   private static let kEnableSkipButton = false
   private static let kEnableArrowDown = false
   private static let kShowAllSpotlightsAtOnce = false
+  private static let kIsAllowPassTouchesThroughSpotlight = false
   private static let kTextLabelFont = UIFont.systemFont(ofSize: 20.0)
   private static let kContinueLabelFont = UIFont.systemFont(ofSize: 13.0)
   private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
@@ -57,7 +58,7 @@ class AwesomeSpotlightView: UIView {
   var continueLabelFont = kContinueLabelFont
   var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
-  var isAllowPassTouchesThroughSpotlight = false
+  var isAllowPassTouchesThroughSpotlight = kIsAllowPassTouchesThroughSpotlight
   
   var isShowed: Bool {
     return currentIndex != 0
