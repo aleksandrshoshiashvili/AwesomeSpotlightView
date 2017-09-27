@@ -26,7 +26,7 @@ AwesomeSpotlightView is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AwesomeSpotlightView', '~> 0.1'
+pod 'AwesomeSpotlightView', '~> 0.1.2'
 ```
 ### Manually
 
@@ -38,9 +38,9 @@ pod 'AwesomeSpotlightView', '~> 0.1'
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-    let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .Circle, text: "spotlight1")
-    let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 20, y: 200, width: 130, height: 25), shape: .Rectangle, text: "spotlight2")
-    let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100), shape: .RoundRectangle, text: "spotlight3")
+    let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .circle, text: "spotlight1")
+    let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 20, y: 200, width: 130, height: 25), shape: .rectangle, text: "spotlight2")
+    let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100), shape: .roundRectangle, text: "spotlight3")
     
     let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3])
     spotlightView.cutoutRadius = 8
@@ -53,9 +53,10 @@ override func viewDidLoad() {
 You can configure AwesomeSpotlightView before you present it using the `start` method. For example:
 
 ```objective-c
-spotlightView.enableContinueLabel = true
-spotlightView.enableSkipButton = true
+spotlightView.enableContinueLabel = false
+spotlightView.enableSkipButton = false
 spotlightView.showAllSpotlightsAtOnce = false
+spotlightView.isAllowPassTouchesThroughSpotlight = true
 spotlightView.start()
 ```
 
@@ -68,6 +69,10 @@ The rect of spotlight.
 ### `shape` (AwesomeSpotlightShape)
 
 Shape of spotlight: .Rectangle, .RoundRectangle, .Circle.
+
+### `margin` (UIEdgeInsets)
+
+Margin for cutout shape. You can set extra space for item with this property.
 
 ### `text` (String)
 
@@ -131,6 +136,10 @@ Fond of skip button (default: UIFont.boldSystemFont(ofSize: 13.0)).
 
 Showed all spotlight at once (at the same time) (default: false).
 
+### `isAllowPassTouchesThroughSpotlight` (Bool)
+
+Set true if you want to allow pass touches through spotlight (allow interaction with view below spotlight) (default: false).
+
 ## AwesomeSpotlightViewDelegate
 
 ### 1. Conform your view controller to the AwesomeSpotlightViewDelegate protocol:
@@ -145,10 +154,10 @@ Showed all spotlight at once (at the same time) (default: false).
 
 *Note: All of the methods are optional. Implement only those that are needed.*
 
-- `func spotlightView(spotlightView : AwesomeSpotlightView, willNavigateToIndex index: Int)`
-- `func spotlightView(spotlightView : AwesomeSpotlightView, didNavigateToIndex index: Int)`
-- `func spotlightViewWillCleanup(spotlightView : AwesomeSpotlightView)`
-- `func spotlightViewDidCleanup(spotlightView : AwesomeSpotlightView)`
+- `func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int)`
+- `func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int)`
+- `func spotlightViewWillCleanup(_ spotlightView: AwesomeSpotlightView, atIndex index: Int)`
+- `func spotlightViewDidCleanup(_ spotlightView: AwesomeSpotlightView)`
 
 ## Inspired by
 * [WSCoachMarksView](https://github.com/workshirt/WSCoachMarksView)
