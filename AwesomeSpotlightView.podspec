@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'AwesomeSpotlightViewSwift'
+  s.name             = 'AwesomeSpotlightView'
   s.version          = '0.1.4'
   s.summary          = 'Awesome tool for create tutorial or education/coach tour'
 
