@@ -26,7 +26,7 @@ AwesomeSpotlightView is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AwesomeSpotlightView', '~> 0.1.2'
+pod 'AwesomeSpotlightView', '~> 0.1.4'
 ```
 ### Manually
 
