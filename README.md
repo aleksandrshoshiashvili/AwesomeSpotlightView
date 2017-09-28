@@ -38,7 +38,7 @@ pod 'AwesomeSpotlightView', '~> 0.1.2'
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-    let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .circle, text: "spotlight1")
+    let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: 75, y: 75, width: 100, height: 100), shape: .circle, text: "spotlight1", isAllowPassTouchesThroughSpotlight: true)
     let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 20, y: 200, width: 130, height: 25), shape: .rectangle, text: "spotlight2")
     let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 170, y: 50, width: 30, height: 100), shape: .roundRectangle, text: "spotlight3")
     
@@ -56,7 +56,6 @@ You can configure AwesomeSpotlightView before you present it using the `start` m
 spotlightView.enableContinueLabel = false
 spotlightView.enableSkipButton = false
 spotlightView.showAllSpotlightsAtOnce = false
-spotlightView.isAllowPassTouchesThroughSpotlight = true
 spotlightView.start()
 ```
 
@@ -73,6 +72,10 @@ Shape of spotlight: .Rectangle, .RoundRectangle, .Circle.
 ### `margin` (UIEdgeInsets)
 
 Margin for cutout shape. You can set extra space for item with this property.
+
+### `isAllowPassTouchesThroughSpotlight` (Bool)
+
+Set true if you want to allow pass touches through spotlight (allow interaction with view below spotlight) (default: false).
 
 ### `text` (String)
 
@@ -136,9 +139,6 @@ Fond of skip button (default: UIFont.boldSystemFont(ofSize: 13.0)).
 
 Showed all spotlight at once (at the same time) (default: false).
 
-### `isAllowPassTouchesThroughSpotlight` (Bool)
-
-Set true if you want to allow pass touches through spotlight (allow interaction with view below spotlight) (default: false).
 
 ## AwesomeSpotlightViewDelegate
 
