@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - AwesomeSpotlightViewDelegate
+
 @objc protocol AwesomeSpotlightViewDelegate {
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int)
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int)
@@ -29,7 +31,6 @@ class AwesomeSpotlightView: UIView {
   private static let kEnableSkipButton = false
   private static let kEnableArrowDown = false
   private static let kShowAllSpotlightsAtOnce = false
-  private static let kIsAllowPassTouchesThroughSpotlight = false
   private static let kTextLabelFont = UIFont.systemFont(ofSize: 20.0)
   private static let kContinueLabelFont = UIFont.systemFont(ofSize: 13.0)
   private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
@@ -58,7 +59,6 @@ class AwesomeSpotlightView: UIView {
   var continueLabelFont = kContinueLabelFont
   var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
-  var isAllowPassTouchesThroughSpotlight = kIsAllowPassTouchesThroughSpotlight
   
   var isShowed: Bool {
     return currentIndex != 0
@@ -165,17 +165,17 @@ class AwesomeSpotlightView: UIView {
     let localPoint = convert(point, from: self)
     hitTestPoints.append(localPoint)
     
-    guard currentIndex < spotlightsArray.count,
-      isAllowPassTouchesThroughSpotlight else {
+    guard currentIndex < spotlightsArray.count else {
       return view
     }
     
-    let currentSpotlightRect = spotlightsArray[currentIndex].rect
-    if currentSpotlightRect.contains(localPoint) {
-      let asyncTime = 0.15
-      DispatchQueue.main.asyncAfter(deadline: .now() + asyncTime, execute: {
-        self.cleanup()
-      })
+    let currentSpotlight = spotlightsArray[currentIndex]
+    if currentSpotlight.rect.contains(localPoint), currentSpotlight.isAllowPassTouchesThroughSpotlight {
+      if hitTestPoints.filter({ $0 == localPoint }).count == 1 {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+          self.cleanup()
+        })
+      }
       return nil
     }
     

@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     
     let showWithContinueAndSkipButtonSpotlight = AwesomeSpotlight(withRect: showWithContinueAndSkipButton.frame, shape: .roundRectangle, text: "showWithContinueAndSkipButtonSpotlight")
     
-    let showAllAtOnceButtonSpotlight = AwesomeSpotlight(withRect: showAllAtOnceButton.frame, shape: .roundRectangle, text: "showAllAtOnceButtonSpotlight")
+    let showAllAtOnceButtonSpotlight = AwesomeSpotlight(withRect: showAllAtOnceButton.frame, shape: .roundRectangle, text: "showAllAtOnceButtonSpotlight", isAllowPassTouchesThroughSpotlight: true)
     
     spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [logoImageViewSpotlight, nameLabelSpotlight, showButtonSpotSpotlight, showWithContinueAndSkipButtonSpotlight, showAllAtOnceButtonSpotlight])
     spotlightView.cutoutRadius = 8
@@ -69,7 +69,6 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = false
     spotlightView.enableSkipButton = false
     spotlightView.showAllSpotlightsAtOnce = false
-    spotlightView.isAllowPassTouchesThroughSpotlight = true
     spotlightView.start()
   }
   @IBAction func handleShowWithContinueAndSkipAction(_ sender: AnyObject) {
@@ -77,7 +76,6 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = true
     spotlightView.enableSkipButton = true
     spotlightView.showAllSpotlightsAtOnce = false
-    spotlightView.isAllowPassTouchesThroughSpotlight = false
     spotlightView.start()
   }
   @IBAction func handleShowAllAtOnceAction(_ sender: AnyObject) {
@@ -85,7 +83,6 @@ class ViewController: UIViewController {
     spotlightView.enableContinueLabel = false
     spotlightView.enableSkipButton = false
     spotlightView.showAllSpotlightsAtOnce = true
-    spotlightView.isAllowPassTouchesThroughSpotlight = false
     spotlightView.start()
   }
   
