@@ -67,7 +67,7 @@ The rect of spotlight.
 
 ### `shape` (AwesomeSpotlightShape)
 
-Shape of spotlight: .Rectangle, .RoundRectangle, .Circle.
+Shape of spotlight: .rectangle, .roundRectangle, .circle.
 
 ### `margin` (UIEdgeInsets)
 
