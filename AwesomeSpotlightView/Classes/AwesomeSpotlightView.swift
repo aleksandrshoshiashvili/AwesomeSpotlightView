@@ -315,7 +315,9 @@ class AwesomeSpotlightView: UIView {
     let rect = calculateRectWithMarginForSpotlight(spotlight)
     
     var y = rect.origin.y + rect.size.height + labelSpacing
-    let bottomY = y + textLabel.frame.size.height + labelSpacing + (enableSkipButton ? (skipSpotlightButton.frame.size.height + (2 * labelSpacing)) : 0)
+    let labelSpacingInset = 2 * labelSpacing 
+    let enableButtonInset = enableSkipButton ? skipSpotlightButton.frame.size.height + labelSpacingInset : 0.0 
+    let bottomY = y + textLabel.frame.size.height + labelSpacing + enableButtonInset
     if bottomY > bounds.size.height {
       y = rect.origin.y - labelSpacing - textLabel.frame.size.height
     }
