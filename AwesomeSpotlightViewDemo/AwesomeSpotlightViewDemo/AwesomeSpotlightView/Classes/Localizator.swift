@@ -14,8 +14,12 @@ private class Localizator {
   
   lazy var localizableDictionary: NSDictionary! = {
     
-    if let bundlePath = Bundle.main.path(forResource: "AwesomeSpotlightViewBundle", ofType: "bundle") {
-      if let path = Bundle(path: bundlePath)?.path(forResource: "Localizable", ofType: "plist") {
+    if let bundlePath = Bundle(for: AwesomeSpotlightView.self)
+      .path(forResource: "AwesomeSpotlightViewBundle",
+            ofType: "bundle") {
+      if let path = Bundle(path: bundlePath)?
+        .path(forResource: "Localizable",
+              ofType: "plist") {
         return NSDictionary(contentsOfFile: path)
       }
     }

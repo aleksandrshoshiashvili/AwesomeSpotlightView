@@ -66,22 +66,36 @@ class ViewController: UIViewController {
   
   @IBAction func handleShowAction(_ sender: AnyObject) {
     view.addSubview(spotlightView)
-    spotlightView.enableContinueLabel = false
-    spotlightView.enableSkipButton = false
+    spotlightView.continueButtonModel.isEnable = false
+    spotlightView.skipButtonModel.isEnable = false
     spotlightView.showAllSpotlightsAtOnce = false
     spotlightView.start()
   }
   @IBAction func handleShowWithContinueAndSkipAction(_ sender: AnyObject) {
     view.addSubview(spotlightView)
-    spotlightView.enableContinueLabel = true
-    spotlightView.enableSkipButton = true
+    spotlightView.continueButtonModel.isEnable = true
+    spotlightView.skipButtonModel.isEnable = true
     spotlightView.showAllSpotlightsAtOnce = false
+    
+    // Uncomment if want to setup skip button more precisely
+    //spotlightView.skipButtonLastStepTitle = "Finish"
+    //spotlightView.skipButtonModel = AwesomeTabButton(title: "Skip".uppercased(),
+    //                                                 font: UIFont.boldSystemFont(ofSize: 16.0),
+    //                                                 isEnable: true,
+    //                                                 backgroundColor: .red)
+    
+    // Uncomment if want to setup continue button more precisely
+    //spotlightView.continueButtonModel = AwesomeTabButton(title: "Next",
+    //                                                     font: UIFont.italicSystemFont(ofSize: 16.0),
+    //                                                     isEnable: true,
+    //                                                     backgroundColor: .blue)
+    
     spotlightView.start()
   }
   @IBAction func handleShowAllAtOnceAction(_ sender: AnyObject) {
     view.addSubview(spotlightView)
-    spotlightView.enableContinueLabel = false
-    spotlightView.enableSkipButton = false
+    spotlightView.continueButtonModel.isEnable = false
+    spotlightView.skipButtonModel.isEnable = false
     spotlightView.showAllSpotlightsAtOnce = true
     spotlightView.start()
   }

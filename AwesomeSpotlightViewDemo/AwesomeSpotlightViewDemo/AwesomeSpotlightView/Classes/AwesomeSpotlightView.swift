@@ -34,6 +34,7 @@ class AwesomeSpotlightView: UIView {
   private static let kTextLabelFont = UIFont.systemFont(ofSize: 20.0)
   private static let kContinueLabelFont = UIFont.systemFont(ofSize: 13.0)
   private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
+  private static let kSkipButtonLastStepTitle = "Done".localized
   
   private var spotlightMask = CAShapeLayer()
   private var continueLabel = UILabel()
@@ -47,18 +48,22 @@ class AwesomeSpotlightView: UIView {
   
   var spotlightsArray: [AwesomeSpotlight] = []
   var textLabel = UILabel()
-  var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
   var animationDuration = kAnimationDuration
   var cutoutRadius : CGFloat = kCutoutRadius
   var maxLabelWidth = kMaxLabelWidth
   var labelSpacing : CGFloat = kMaxLabelSpacing
-  var enableContinueLabel = kEnableContinueLabel
-  var enableSkipButton = kEnableSkipButton
   var enableArrowDown = kEnableArrowDown
   var textLabelFont = kTextLabelFont
-  var continueLabelFont = kContinueLabelFont
-  var skipButtonFont = kSkipButtonFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
+  var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
+  var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
+  var skipButtonLastStepTitle = kSkipButtonLastStepTitle
+  
+  var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6) {
+    didSet {
+      spotlightMask.fillColor = spotlightMaskColor.cgColor
+    }
+  }
   
   var isShowed: Bool {
     return currentIndex != 0
@@ -130,33 +135,46 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func setupContinueLabel() {
-    let continueLabelWidth = enableSkipButton ? 0.7 * bounds.size.width : bounds.size.width
-    let continueLabelHeight : CGFloat = 30.0
-    continueLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height - continueLabelHeight, width: continueLabelWidth, height: continueLabelHeight))
-    continueLabel.font = continueLabelFont
+    let continueLabelWidth = skipButtonModel.isEnable ? 0.7 * bounds.size.width : bounds.size.width
+    let continueLabelHeight: CGFloat = 30.0
+    
+    if #available(iOS 11.0, *) {
+      continueLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height - continueLabelHeight - safeAreaInsets.bottom, width: continueLabelWidth, height: continueLabelHeight))
+    } else {
+      continueLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height - continueLabelHeight, width: continueLabelWidth, height: continueLabelHeight))
+    }
+    
+    continueLabel.font = continueButtonModel.font
     continueLabel.textAlignment = .center
-    continueLabel.text = "Continue".localized
+    continueLabel.text = continueButtonModel.title
     continueLabel.alpha = 0
-    continueLabel.backgroundColor = .white
+    continueLabel.backgroundColor = continueButtonModel.backgroundColor ?? .white
     addSubview(continueLabel)
   }
   
   private func setupSkipSpotlightButton() {
     let continueLabelWidth = 0.7 * bounds.size.width
     let skipSpotlightButtonWidth = bounds.size.width - continueLabelWidth
-    let skipSpotlightButtonHeight : CGFloat = 30.0
-    skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
+    let skipSpotlightButtonHeight: CGFloat = 30.0
+    
+    if #available(iOS 11.0, *) {
+      skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight - safeAreaInsets.bottom, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
+    } else {
+      skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
+    }
+    
     skipSpotlightButton.addTarget(self, action: #selector(AwesomeSpotlightView.skipSpotlight), for: .touchUpInside)
-    skipSpotlightButton.setTitle("Skip".localized, for: [])
-    skipSpotlightButton.titleLabel?.font = skipButtonFont
+    skipSpotlightButton.setTitle(skipButtonModel.title, for: [])
+    skipSpotlightButton.titleLabel?.font = skipButtonModel.font
     skipSpotlightButton.alpha = 0
     skipSpotlightButton.tintColor = .white
+    skipSpotlightButton.backgroundColor = skipButtonModel.backgroundColor ?? .clear
     addSubview(skipSpotlightButton)
   }
   
   // MARK: - Touches
   
-  func userDidTap(_ recognizer: UITapGestureRecognizer) {
+  @objc func userDidTap(_ recognizer: UITapGestureRecognizer) {
     goToSpotlightAtIndex(index: currentIndex + 1)
   }
   
@@ -200,7 +218,7 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func goToSpotlightAtIndex(index: Int) {
-    if index >= self.spotlightsArray.count {
+    if index >= spotlightsArray.count {
       cleanup()
     } else if showAllSpotlightsAtOnce {
       showSpotlightsAllAtOnce()
@@ -211,8 +229,9 @@ class AwesomeSpotlightView: UIView {
   
   private func showSpotlightsAllAtOnce() {
     if let firstSpotlight = spotlightsArray.first {
-      enableContinueLabel = false
-      enableSkipButton = false
+      continueButtonModel.isEnable = false
+      skipButtonModel.isEnable = false
+      
       setCutoutToSpotlight(spotlight: firstSpotlight)
       animateCutoutToSpotlights(spotlights: spotlightsArray)
       currentIndex = spotlightsArray.count
@@ -258,7 +277,7 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func showContinueLabelIfNeeded(index: Int) {
-    if enableContinueLabel {
+    if continueButtonModel.isEnable {
       if index == 0 {
         setupContinueLabel()
         UIView.animate(withDuration: animationDuration, delay: delayTime, options: .curveLinear, animations: {
@@ -272,15 +291,17 @@ class AwesomeSpotlightView: UIView {
   }
   
   private func showSkipButtonIfNeeded(index: Int) {
-    if enableSkipButton && index == 0 {
+    if skipButtonModel.isEnable && index == 0 {
       setupSkipSpotlightButton()
       UIView.animate(withDuration: animationDuration, delay: delayTime, options: .curveLinear, animations: {
         self.skipSpotlightButton.alpha = 1
       })
+    } else if skipSpotlightButton.isEnabled && index == spotlightsArray.count - 1 {
+      skipSpotlightButton.setTitle(skipButtonLastStepTitle, for: .normal)
     }
   }
   
-  func skipSpotlight() {
+  @objc func skipSpotlight() {
     goToSpotlightAtIndex(index: spotlightsArray.count)
   }
   

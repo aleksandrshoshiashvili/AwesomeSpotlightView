@@ -16,6 +16,7 @@
 		5212CC0C1E64B0A800331B19 /* AwesomeSpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */; };
 		5212CC0D1E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */; };
 		5212CC0E1E64B0A800331B19 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CC0A1E64B0A800331B19 /* Localizator.swift */; };
+		6CBBD06D2030924E002A5F95 /* AwesomeTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSpotlightView.swift; sourceTree = "<group>"; };
 		5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AwesomeSpotlightViewBundle.bundle; sourceTree = "<group>"; };
 		5212CC0A1E64B0A800331B19 /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
+		6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeTabButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		5212CC061E64B0A800331B19 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */,
 				5212CC071E64B0A800331B19 /* AwesomeSpotlight.swift */,
 				5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */,
 				5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */,
@@ -119,12 +122,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Alex Shoshiashvili";
 				TargetAttributes = {
 					520617601E64AA6C008689A2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 92465BS428;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -167,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520617671E64AA6D008689A2 /* ViewController.swift in Sources */,
+				6CBBD06D2030924E002A5F95 /* AwesomeTabButton.swift in Sources */,
 				5212CC0B1E64B0A800331B19 /* AwesomeSpotlight.swift in Sources */,
 				520617651E64AA6D008689A2 /* AppDelegate.swift in Sources */,
 				5212CC0C1E64B0A800331B19 /* AwesomeSpotlightView.swift in Sources */,
@@ -205,7 +210,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -213,7 +220,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -254,7 +265,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -262,7 +275,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -297,7 +314,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aleksandrshoshiashvili.AwesomeSpotlightViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -311,7 +329,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aleksandrshoshiashvili.AwesomeSpotlightViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
