@@ -53,15 +53,20 @@ class AwesomeSpotlightView: UIView {
   var maxLabelWidth = kMaxLabelWidth
   var labelSpacing : CGFloat = kMaxLabelSpacing
   var enableArrowDown = kEnableArrowDown
-  var textLabelFont = kTextLabelFont
   var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
-  var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
-  var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
+  var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
+  var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
   var skipButtonLastStepTitle = kSkipButtonLastStepTitle
   
   var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6) {
     didSet {
       spotlightMask.fillColor = spotlightMaskColor.cgColor
+    }
+  }
+  
+  var textLabelFont = kTextLabelFont {
+    didSet {
+      textLabel.font = textLabelFont
     }
   }
   

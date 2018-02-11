@@ -4,6 +4,13 @@
 <dict>
 	<key>Buttons</key>
 	<dict>
+		<key>Done</key>
+		<dict>
+			<key>value</key>
+			<string>Закрыть</string>
+			<key>comment</key>
+			<string>skip last step button</string>
+		</dict>
 		<key>Continue</key>
 		<dict>
 			<key>value</key>

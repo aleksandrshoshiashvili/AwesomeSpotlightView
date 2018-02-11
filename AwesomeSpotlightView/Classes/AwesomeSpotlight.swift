@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AwesomeSpotlight: NSObject {
+open class AwesomeSpotlight: NSObject {
   
   enum AwesomeSpotlightShape {
     case rectangle
