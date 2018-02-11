@@ -53,8 +53,9 @@ override func viewDidLoad() {
 You can configure AwesomeSpotlightView before you present it using the `start` method. For example:
 
 ```objective-c
-spotlightView.enableContinueLabel = false
-spotlightView.enableSkipButton = false
+spotlightView.continueButtonModel = AwesomeTabButton(title: "Next", font: UIFont.italicSystemFont(ofSize: 16.0), isEnable: true)
+spotlightView.skipButtonModel.isEnable = true
+spotlightView.skipButtonLastStepTitle = "Finish"
 spotlightView.showAllSpotlightsAtOnce = false
 spotlightView.start()
 ```
@@ -111,14 +112,6 @@ The captions label is set to have a max width of 280px. Number of lines is figur
 
 Define how far the captions label appears above or below the cutout (default: 35px).
 
-### `enableContinueLabel` (Bool)
-
-'Tap to continue' label pops up by default to guide the user at the first spotlight (default: false).
-
-### `enableSkipButton` (Bool)
-
-'Skip' label pops up by default to guide the user at the first spotlight (default: false).
-
 ### `enableArrowDown` (Bool)
 
 Icon with Arrow showed between caption text and caption (default: false).
@@ -127,17 +120,22 @@ Icon with Arrow showed between caption text and caption (default: false).
 
 Fond of caption text label (default: UIFont.systemFont(ofSize: 20.0)).
 
-### `continueLabelFont` (UIFont)
-
-Fond of continue label (default: UIFont.systemFont(ofSize: 13.0)).
-
-### `skipButtonFont` (UIFont)
-
-Fond of skip button (default: UIFont.boldSystemFont(ofSize: 13.0)).
-
 ### `showAllSpotlightsAtOnce` (Bool)
 
 Showed all spotlight at once (at the same time) (default: false).
+
+### `skipButtonLastStepTitle` (String)
+
+This title will show in skip button when user did open last spotlight. (default: Done)
+
+### `continueButtonModel` (AwesomeTabButton)
+### `skipButtonModel` (AwesomeTabButton)
+
+You can setup buttons with `AwesomeTabButton` structure: title, font, backgroundColor and isEnable state.
+
+Default for continueButtonModel: title: "Continue", font: UIFont.boldSystemFont(ofSize: 13.0), isEnable: false
+
+Default for skipButtonModel: title: "Skip", font: UIFont.boldSystemFont(ofSize: 13.0), isEnable: false
 
 
 ## AwesomeSpotlightViewDelegate
