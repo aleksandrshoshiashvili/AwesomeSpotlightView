@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Buttons</key>
+	<dict>
+		<key>Done</key>
+		<dict>
+			<key>value</key>
+			<string>Закрыть</string>
+			<key>comment</key>
+			<string>skip last step button</string>
+		</dict>
+		<key>Continue</key>
+		<dict>
+			<key>value</key>
+			<string>Далее</string>
+			<key>comment</key>
+			<string>continue button</string>
+		</dict>
+		<key>Skip</key>
+		<dict>
+			<key>value</key>
+			<string>Пропустить</string>
+			<key>comment</key>
+			<string>skip button</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
