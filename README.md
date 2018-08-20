@@ -20,6 +20,11 @@ AwesomeSpotlightView is a nice and simple library for iOS written on Swift 4. It
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+[Swift Example](https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView/tree/master/AwesomeSpotlightViewDemo)
+
+[ObjC Example](https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView/tree/master/AwesomeSpotlightViewDemoObjC)
+
+
 ## Installation
 ### CocoaPods
 AwesomeSpotlightView is available through [CocoaPods](http://cocoapods.org). To install
