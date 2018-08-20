@@ -10,16 +10,17 @@ import UIKit
 
 // MARK: - AwesomeSpotlightViewDelegate
 
-@objc protocol AwesomeSpotlightViewDelegate {
+@objc public protocol AwesomeSpotlightViewDelegate {
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int)
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int)
   @objc optional func spotlightViewWillCleanup(_ spotlightView: AwesomeSpotlightView, atIndex index: Int)
   @objc optional func spotlightViewDidCleanup(_ spotlightView: AwesomeSpotlightView)
 }
 
-class AwesomeSpotlightView: UIView {
+@objcMembers
+public class AwesomeSpotlightView: UIView {
   
-  var delegate : AwesomeSpotlightViewDelegate?
+  public var delegate : AwesomeSpotlightViewDelegate?
   
   // MARK: - private variables
   
@@ -46,50 +47,50 @@ class AwesomeSpotlightView: UIView {
   
   // MARK: - public variables
   
-  var spotlightsArray: [AwesomeSpotlight] = []
-  var textLabel = UILabel()
-  var animationDuration = kAnimationDuration
-  var cutoutRadius : CGFloat = kCutoutRadius
-  var maxLabelWidth = kMaxLabelWidth
-  var labelSpacing : CGFloat = kMaxLabelSpacing
-  var enableArrowDown = kEnableArrowDown
-  var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
-  var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
-  var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
-  var skipButtonLastStepTitle = kSkipButtonLastStepTitle
+  public var spotlightsArray: [AwesomeSpotlight] = []
+  public var textLabel = UILabel()
+  public var animationDuration = kAnimationDuration
+  public var cutoutRadius : CGFloat = kCutoutRadius
+  public var maxLabelWidth = kMaxLabelWidth
+  public var labelSpacing : CGFloat = kMaxLabelSpacing
+  public var enableArrowDown = kEnableArrowDown
+  public var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
+  public var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
+  public var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
+  public var skipButtonLastStepTitle = kSkipButtonLastStepTitle
   
-  var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6) {
+  public var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6) {
     didSet {
       spotlightMask.fillColor = spotlightMaskColor.cgColor
     }
   }
   
-  var textLabelFont = kTextLabelFont {
+  public var textLabelFont = kTextLabelFont {
     didSet {
       textLabel.font = textLabelFont
     }
   }
   
-  var isShowed: Bool {
+  public var isShowed: Bool {
     return currentIndex != 0
   }
   
-  var currentIndex = 0
+  public var currentIndex = 0
   
   // MARK: - Initializers
   
-  override init(frame: CGRect) {
+  override public init(frame: CGRect) {
     super.init(frame: frame)
   }
   
-  convenience init(frame: CGRect, spotlight: [AwesomeSpotlight]) {
+  convenience public init(frame: CGRect, spotlight: [AwesomeSpotlight]) {
     self.init(frame: frame)
     
     self.spotlightsArray = spotlight
     self.setup()
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -183,7 +184,7 @@ class AwesomeSpotlightView: UIView {
     goToSpotlightAtIndex(index: currentIndex + 1)
   }
   
-  override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+  override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     let view = super.hitTest(point, with: event)
     let localPoint = convert(point, from: self)
     hitTestPoints.append(localPoint)
@@ -207,7 +208,7 @@ class AwesomeSpotlightView: UIView {
   
   // MARK: - Presenter
   
-  func start() {
+  public func start() {
     alpha = 0
     isHidden = false
     textLabel.font = textLabelFont
@@ -442,10 +443,20 @@ class AwesomeSpotlightView: UIView {
     }
   }
   
+    // MARK: - Objective-C Support Function
+    // Objective-C provides support function because it does not correspond to struct
+    
+    public func setContinueButtonEnable(_ isEnable:Bool) {
+        self.continueButtonModel.isEnable = isEnable
+    }
+    
+    public func setSkipButtonEnable(_ isEnable:Bool) {
+        self.skipButtonModel.isEnable = isEnable
+    }
 }
 
 extension AwesomeSpotlightView : CAAnimationDelegate {
-  func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+  public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     delegate?.spotlightView?(self, didNavigateToIndex: currentIndex)
   }
 }

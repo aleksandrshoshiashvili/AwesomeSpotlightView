@@ -10,7 +10,7 @@ import UIKit
 
 open class AwesomeSpotlight: NSObject {
   
-  enum AwesomeSpotlightShape {
+  @objc public enum AwesomeSpotlightShape : Int {
     case rectangle
     case roundRectangle
     case circle
@@ -37,7 +37,7 @@ open class AwesomeSpotlight: NSObject {
     return NSValue(cgRect: rect)
   }
   
-  init(withRect rect: CGRect,
+  @objc public init(withRect rect: CGRect,
        shape: AwesomeSpotlightShape,
        text: String,
        margin: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
@@ -50,7 +50,7 @@ open class AwesomeSpotlight: NSObject {
     self.isAllowPassTouchesThroughSpotlight = isAllowPassTouchesThroughSpotlight
   }
   
-  init(withRect rect: CGRect,
+  @objc public init(withRect rect: CGRect,
        shape: AwesomeSpotlightShape,
        attributedText: NSAttributedString,
        margin: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
@@ -63,7 +63,7 @@ open class AwesomeSpotlight: NSObject {
     self.isAllowPassTouchesThroughSpotlight = isAllowPassTouchesThroughSpotlight
   }
   
-  convenience override init() {
+  convenience override public init() {
     self.init(withRect: CGRect(), shape: .roundRectangle, text: "", margin: UIEdgeInsets())
   }
   

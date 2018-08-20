@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aed-73-axf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="8Uf-CL-Qc9">
+            <objects>
+                <viewController id="aed-73-axf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hdJ-rO-TbP"/>
+                        <viewControllerLayoutGuide type="bottom" id="H11-ha-gum"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uFT-Ub-r8B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AwesomeSpotlightView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fCe-O4-c9u">
+                                <rect key="frame" x="74" y="309" width="285" height="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotlight" translatesAutoresizingMaskIntoConstraints="NO" id="41H-fZ-woL">
+                                <rect key="frame" x="16" y="309" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="UWK-Ho-a5a"/>
+                                    <constraint firstAttribute="height" constant="50" id="uw3-56-GWB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.43137254899999999" blue="0.69411764710000001" alpha="0.65899268619999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="41H-fZ-woL" firstAttribute="leading" secondItem="uFT-Ub-r8B" secondAttribute="leadingMargin" id="6Se-9X-TCi"/>
+                            <constraint firstItem="41H-fZ-woL" firstAttribute="top" secondItem="fCe-O4-c9u" secondAttribute="top" id="DDa-zX-s97"/>
+                            <constraint firstItem="fCe-O4-c9u" firstAttribute="leading" secondItem="41H-fZ-woL" secondAttribute="trailing" constant="8" symbolic="YES" id="FQ1-LW-WRz"/>
+                            <constraint firstItem="41H-fZ-woL" firstAttribute="bottom" secondItem="fCe-O4-c9u" secondAttribute="bottom" id="mA5-8w-4wQ"/>
+                            <constraint firstItem="fCe-O4-c9u" firstAttribute="trailing" secondItem="uFT-Ub-r8B" secondAttribute="trailingMargin" id="v1x-MM-dvn"/>
+                            <constraint firstItem="41H-fZ-woL" firstAttribute="centerY" secondItem="uFT-Ub-r8B" secondAttribute="centerY" id="xrk-0O-D8h"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73f-Ks-2vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="spotlight" width="96" height="96"/>
+    </resources>
+</document>
