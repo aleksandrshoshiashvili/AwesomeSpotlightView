@@ -105,7 +105,7 @@ public class AwesomeSpotlightView: UIView {
   }
   
   private func setupMask() {
-    spotlightMask.fillRule = kCAFillRuleEvenOdd
+    spotlightMask.fillRule = CAShapeLayerFillRule.evenOdd
     spotlightMask.fillColor = spotlightMaskColor.cgColor
     layer.addSublayer(spotlightMask)
   }
@@ -414,10 +414,10 @@ public class AwesomeSpotlightView: UIView {
     let animationKeyPath = "path"
     let animation = CABasicAnimation(keyPath: animationKeyPath)
     animation.delegate = self
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     animation.duration = animationDuration
     animation.isRemovedOnCompletion = false
-    animation.fillMode = kCAFillModeForwards
+    animation.fillMode = CAMediaTimingFillMode.forwards
     animation.fromValue = spotlightMask.path
     animation.toValue = path
     spotlightMask.add(animation, forKey: animationKeyPath)
