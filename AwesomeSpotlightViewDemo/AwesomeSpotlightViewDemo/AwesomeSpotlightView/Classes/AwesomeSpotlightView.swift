@@ -20,14 +20,14 @@ import UIKit
 @objcMembers
 public class AwesomeSpotlightView: UIView {
   
-  public var delegate : AwesomeSpotlightViewDelegate?
+  public var delegate: AwesomeSpotlightViewDelegate?
   
   // MARK: - private variables
   
   private static let kAnimationDuration = 0.3
-  private static let kCutoutRadius : CGFloat = 4.0
+  private static let kCutoutRadius: CGFloat = 4.0
   private static let kMaxLabelWidth = 280.0
-  private static let kMaxLabelSpacing : CGFloat = 35.0
+  private static let kMaxLabelSpacing: CGFloat = 35.0
   private static let kEnableContinueLabel = false
   private static let kEnableSkipButton = false
   private static let kEnableArrowDown = false
@@ -38,8 +38,6 @@ public class AwesomeSpotlightView: UIView {
   private static let kSkipButtonLastStepTitle = "Done".localized
   
   private var spotlightMask = CAShapeLayer()
-  private var continueLabel = UILabel()
-  private var skipSpotlightButton = UIButton()
   private var arrowDownImageView = UIImageView()
   private var arrowDownSize = CGSize(width: 12, height: 18)
   private var delayTime: TimeInterval = 0.35
@@ -49,10 +47,12 @@ public class AwesomeSpotlightView: UIView {
   
   public var spotlightsArray: [AwesomeSpotlight] = []
   public var textLabel = UILabel()
+  public var continueLabel = UILabel()
+  public var skipSpotlightButton = UIButton()
   public var animationDuration = kAnimationDuration
-  public var cutoutRadius : CGFloat = kCutoutRadius
+  public var cutoutRadius: CGFloat = kCutoutRadius
   public var maxLabelWidth = kMaxLabelWidth
-  public var labelSpacing : CGFloat = kMaxLabelSpacing
+  public var labelSpacing: CGFloat = kMaxLabelSpacing
   public var enableArrowDown = kEnableArrowDown
   public var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
   public var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
@@ -105,7 +105,7 @@ public class AwesomeSpotlightView: UIView {
   }
   
   private func setupMask() {
-    spotlightMask.fillRule = kCAFillRuleEvenOdd
+    spotlightMask.fillRule = CAShapeLayerFillRule.evenOdd
     spotlightMask.fillColor = spotlightMaskColor.cgColor
     layer.addSublayer(spotlightMask)
   }
@@ -414,10 +414,10 @@ public class AwesomeSpotlightView: UIView {
     let animationKeyPath = "path"
     let animation = CABasicAnimation(keyPath: animationKeyPath)
     animation.delegate = self
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     animation.duration = animationDuration
     animation.isRemovedOnCompletion = false
-    animation.fillMode = kCAFillModeForwards
+    animation.fillMode = CAMediaTimingFillMode.forwards
     animation.fromValue = spotlightMask.path
     animation.toValue = path
     spotlightMask.add(animation, forKey: animationKeyPath)
@@ -455,7 +455,7 @@ public class AwesomeSpotlightView: UIView {
     }
 }
 
-extension AwesomeSpotlightView : CAAnimationDelegate {
+extension AwesomeSpotlightView: CAAnimationDelegate {
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     delegate?.spotlightView?(self, didNavigateToIndex: currentIndex)
   }
