@@ -4,13 +4,13 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/platform-iOS9%2B-blue.svg?style=flat" alt="Platform: iOS 9+" />
-    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift4-f48041.svg?style=flat" alt="Language: Swift 4" /></a>
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift5-f48041.svg?style=flat" alt="Language: Swift 5" /></a>
     <a href="https://cocoapods.org/pods/AwesomeSpotlightView"><img src="https://cocoapod-badges.herokuapp.com/v/AwesomeSpotlightView/badge.png" alt="Cocoapods compatible" /></a>
     <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT" />
 </p>
  
 
-AwesomeSpotlightView is a nice and simple library for iOS written on Swift 4. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
+AwesomeSpotlightView is a nice and simple library for iOS written on Swift 5. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
 
 ![icon](https://s8.hostingkartinok.com/uploads/images/2017/06/2de205e60758e2d620c8a9a4621f9e75.gif)
 
@@ -31,7 +31,7 @@ AwesomeSpotlightView is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AwesomeSpotlightView', '~> 0.1.8'
+pod 'AwesomeSpotlightView'
 ```
 ### Manually
 
