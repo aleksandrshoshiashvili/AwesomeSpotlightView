@@ -1,0 +1,6 @@
+framework module Pods_AwesomeSpotlightViewDemoObjC {
+  umbrella header "Pods-AwesomeSpotlightViewDemoObjC-umbrella.h"
+
+  export *
+  module * { export * }
+}

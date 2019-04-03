@@ -1,0 +1,6 @@
+framework module AwesomeSpotlightView {
+  umbrella header "AwesomeSpotlightView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - AwesomeSpotlightView (0.1.9)
+
+DEPENDENCIES:
+  - AwesomeSpotlightView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AwesomeSpotlightView
+
+SPEC CHECKSUMS:
+  AwesomeSpotlightView: 97e84d680c82649898213088bb13134317ab4150
+
+PODFILE CHECKSUM: 643baa1a5735335e7b1fcc1ed367b179b2a830c0
+
+COCOAPODS: 1.7.0.beta.2

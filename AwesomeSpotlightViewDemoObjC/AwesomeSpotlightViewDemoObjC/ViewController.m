@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AwesomeSpotlightViewDemoObjC-Swift.h"
+#import "AwesomeSpotlightView-Swift.h"
 
 @interface ViewController () <AwesomeSpotlightViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;

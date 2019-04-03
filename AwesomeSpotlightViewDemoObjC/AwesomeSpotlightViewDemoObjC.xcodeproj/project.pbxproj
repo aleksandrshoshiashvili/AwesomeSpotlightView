@@ -3,24 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41A2F4737FDEDF765EEC74A9 /* Pods_AwesomeSpotlightViewDemoObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23776EC7C46B97CB9AEEE00A /* Pods_AwesomeSpotlightViewDemoObjC.framework */; };
 		9DC01A9B2123B7CD006144A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01A9A2123B7CD006144A1 /* AppDelegate.m */; };
 		9DC01A9E2123B7CD006144A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01A9D2123B7CD006144A1 /* ViewController.m */; };
 		9DC01AA12123B7CD006144A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC01A9F2123B7CD006144A1 /* Main.storyboard */; };
 		9DC01AA32123B7D0006144A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC01AA22123B7D0006144A1 /* Assets.xcassets */; };
 		9DC01AA62123B7D0006144A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC01AA42123B7D0006144A1 /* LaunchScreen.storyboard */; };
 		9DC01AA92123B7D0006144A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01AA82123B7D0006144A1 /* main.m */; };
-		9DC01AB62123B864006144A1 /* AwesomeTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01AB12123B863006144A1 /* AwesomeTabButton.swift */; };
-		9DC01AB72123B864006144A1 /* AwesomeSpotlightViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DC01AB22123B863006144A1 /* AwesomeSpotlightViewBundle.bundle */; };
-		9DC01AB82123B864006144A1 /* AwesomeSpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01AB32123B863006144A1 /* AwesomeSpotlightView.swift */; };
-		9DC01AB92123B864006144A1 /* AwesomeSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01AB42123B863006144A1 /* AwesomeSpotlight.swift */; };
-		9DC01ABA2123B864006144A1 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC01AB52123B863006144A1 /* Localizator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15E4E2198DA619D276846642 /* Pods-AwesomeSpotlightViewDemoObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeSpotlightViewDemoObjC.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeSpotlightViewDemoObjC/Pods-AwesomeSpotlightViewDemoObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		23776EC7C46B97CB9AEEE00A /* Pods_AwesomeSpotlightViewDemoObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeSpotlightViewDemoObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		887999556C08C239C7BB5470 /* Pods-AwesomeSpotlightViewDemoObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeSpotlightViewDemoObjC.release.xcconfig"; path = "Target Support Files/Pods-AwesomeSpotlightViewDemoObjC/Pods-AwesomeSpotlightViewDemoObjC.release.xcconfig"; sourceTree = "<group>"; };
 		9DC01A962123B7CD006144A1 /* AwesomeSpotlightViewDemoObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeSpotlightViewDemoObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC01A992123B7CD006144A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DC01A9A2123B7CD006144A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,11 +30,6 @@
 		9DC01AA52123B7D0006144A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DC01AA72123B7D0006144A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC01AA82123B7D0006144A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9DC01AB12123B863006144A1 /* AwesomeTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTabButton.swift; sourceTree = "<group>"; };
-		9DC01AB22123B863006144A1 /* AwesomeSpotlightViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AwesomeSpotlightViewBundle.bundle; sourceTree = "<group>"; };
-		9DC01AB32123B863006144A1 /* AwesomeSpotlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSpotlightView.swift; sourceTree = "<group>"; };
-		9DC01AB42123B863006144A1 /* AwesomeSpotlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSpotlight.swift; sourceTree = "<group>"; };
-		9DC01AB52123B863006144A1 /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A2F4737FDEDF765EEC74A9 /* Pods_AwesomeSpotlightViewDemoObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2606EA6B69613F3C38C427BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15E4E2198DA619D276846642 /* Pods-AwesomeSpotlightViewDemoObjC.debug.xcconfig */,
+				887999556C08C239C7BB5470 /* Pods-AwesomeSpotlightViewDemoObjC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9DC01A8D2123B7CD006144A1 = {
 			isa = PBXGroup;
 			children = (
 				9DC01A982123B7CD006144A1 /* AwesomeSpotlightViewDemoObjC */,
 				9DC01A972123B7CD006144A1 /* Products */,
+				2606EA6B69613F3C38C427BE /* Pods */,
+				CB7BAF94348952E2858F9578 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,7 +74,6 @@
 		9DC01A982123B7CD006144A1 /* AwesomeSpotlightViewDemoObjC */ = {
 			isa = PBXGroup;
 			children = (
-				9DC01AAF2123B863006144A1 /* AwesomeSpotlightView */,
 				9DC01A992123B7CD006144A1 /* AppDelegate.h */,
 				9DC01A9A2123B7CD006144A1 /* AppDelegate.m */,
 				9DC01A9C2123B7CD006144A1 /* ViewController.h */,
@@ -82,24 +87,12 @@
 			path = AwesomeSpotlightViewDemoObjC;
 			sourceTree = "<group>";
 		};
-		9DC01AAF2123B863006144A1 /* AwesomeSpotlightView */ = {
+		CB7BAF94348952E2858F9578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DC01AB02123B863006144A1 /* Classes */,
+				23776EC7C46B97CB9AEEE00A /* Pods_AwesomeSpotlightViewDemoObjC.framework */,
 			);
-			path = AwesomeSpotlightView;
-			sourceTree = "<group>";
-		};
-		9DC01AB02123B863006144A1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9DC01AB12123B863006144A1 /* AwesomeTabButton.swift */,
-				9DC01AB42123B863006144A1 /* AwesomeSpotlight.swift */,
-				9DC01AB32123B863006144A1 /* AwesomeSpotlightView.swift */,
-				9DC01AB22123B863006144A1 /* AwesomeSpotlightViewBundle.bundle */,
-				9DC01AB52123B863006144A1 /* Localizator.swift */,
-			);
-			path = Classes;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC01AAC2123B7D0006144A1 /* Build configuration list for PBXNativeTarget "AwesomeSpotlightViewDemoObjC" */;
 			buildPhases = (
+				75A67CEA8DF266CD72165BE7 /* [CP] Check Pods Manifest.lock */,
 				9DC01A922123B7CD006144A1 /* Sources */,
 				9DC01A932123B7CD006144A1 /* Frameworks */,
 				9DC01A942123B7CD006144A1 /* Resources */,
+				B1330E9BDF4C970B70763F1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,11 +157,52 @@
 				9DC01AA62123B7D0006144A1 /* LaunchScreen.storyboard in Resources */,
 				9DC01AA32123B7D0006144A1 /* Assets.xcassets in Resources */,
 				9DC01AA12123B7CD006144A1 /* Main.storyboard in Resources */,
-				9DC01AB72123B864006144A1 /* AwesomeSpotlightViewBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75A67CEA8DF266CD72165BE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AwesomeSpotlightViewDemoObjC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1330E9BDF4C970B70763F1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AwesomeSpotlightViewDemoObjC/Pods-AwesomeSpotlightViewDemoObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AwesomeSpotlightViewDemoObjC/Pods-AwesomeSpotlightViewDemoObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AwesomeSpotlightViewDemoObjC/Pods-AwesomeSpotlightViewDemoObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DC01A922123B7CD006144A1 /* Sources */ = {
@@ -174,11 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC01A9E2123B7CD006144A1 /* ViewController.m in Sources */,
-				9DC01AB62123B864006144A1 /* AwesomeTabButton.swift in Sources */,
-				9DC01AB82123B864006144A1 /* AwesomeSpotlightView.swift in Sources */,
 				9DC01AA92123B7D0006144A1 /* main.m in Sources */,
-				9DC01AB92123B864006144A1 /* AwesomeSpotlight.swift in Sources */,
-				9DC01ABA2123B864006144A1 /* Localizator.swift in Sources */,
 				9DC01A9B2123B7CD006144A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,10 +349,12 @@
 		};
 		9DC01AAD2123B7D0006144A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15E4E2198DA619D276846642 /* Pods-AwesomeSpotlightViewDemoObjC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AwesomeSpotlightViewDemoObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,10 +368,12 @@
 		};
 		9DC01AAE2123B7D0006144A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 887999556C08C239C7BB5470 /* Pods-AwesomeSpotlightViewDemoObjC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AwesomeSpotlightViewDemoObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
