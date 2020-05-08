@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeSpotlightView'
-  s.version          = '0.1.9'
+  s.version          = '0.1.10'
   s.summary          = 'Awesome tool for create tutorial or education/coach tour'
 
   s.description      = <<-DESC

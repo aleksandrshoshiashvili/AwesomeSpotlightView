@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - AwesomeSpotlightViewDelegate
 
-@objc public protocol AwesomeSpotlightViewDelegate {
+@objc public protocol AwesomeSpotlightViewDelegate: AnyObject {
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, willNavigateToIndex index: Int)
   @objc optional func spotlightView(_ spotlightView: AwesomeSpotlightView, didNavigateToIndex index: Int)
   @objc optional func spotlightViewWillCleanup(_ spotlightView: AwesomeSpotlightView, atIndex index: Int)
@@ -20,7 +20,7 @@ import UIKit
 @objcMembers
 public class AwesomeSpotlightView: UIView {
   
-  public var delegate: AwesomeSpotlightViewDelegate?
+  public weak var delegate: AwesomeSpotlightViewDelegate?
   
   // MARK: - private variables
   
@@ -209,19 +209,21 @@ public class AwesomeSpotlightView: UIView {
   // MARK: - Presenter
   
   public func start() {
+    start(fromIndex: 0)
+  }
+  
+  public func start(fromIndex index: Int) {
     alpha = 0
     isHidden = false
     textLabel.font = textLabelFont
     UIView.animate(withDuration: animationDuration, animations: {
       self.alpha = 1
     }) { (finished) in
-      self.goToFirstSpotlight()
+      self.goToSpotlightAtIndex(index: index)
     }
   }
   
-  private func goToFirstSpotlight() {
-    goToSpotlightAtIndex(index: 0)
-  }
+  // MARK: - Private
   
   private func goToSpotlightAtIndex(index: Int) {
     if index >= spotlightsArray.count {
@@ -267,7 +269,10 @@ public class AwesomeSpotlightView: UIView {
   
   private func showArrowIfNeeded(spotlight: AwesomeSpotlight) {
     if enableArrowDown {
-      arrowDownImageView.frame = CGRect(origin: CGPoint(x: center.x - 6, y: spotlight.rect.origin.y - 18 - 16), size: arrowDownSize)
+      let arrowImageOrigin = CGPoint(x: spotlight.rect.origin.x + spotlight.rect.width / 2.0 - arrowDownSize.width / 2.0,
+                                     y: spotlight.rect.origin.y - arrowDownSize.height * 2)
+      arrowDownImageView.frame = CGRect(origin: arrowImageOrigin,
+                                        size: arrowDownSize)
       UIView.animate(withDuration: animationDuration, animations: {
         self.arrowDownImageView.alpha = 1
       })

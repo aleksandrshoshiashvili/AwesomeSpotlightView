@@ -77,14 +77,14 @@ class ViewController: UIViewController {
     spotlightView.skipButtonModel.isEnable = true
     spotlightView.showAllSpotlightsAtOnce = false
     
-    // Uncomment if want to setup skip button more precisely
+    // Uncomment if want to customize skip button
     //spotlightView.skipButtonLastStepTitle = "Finish"
     //spotlightView.skipButtonModel = AwesomeTabButton(title: "Skip".uppercased(),
     //                                                 font: UIFont.boldSystemFont(ofSize: 16.0),
     //                                                 isEnable: true,
     //                                                 backgroundColor: .red)
     
-    // Uncomment if want to setup continue button more precisely
+    // Uncomment if want to customize continue button
     //spotlightView.continueButtonModel = AwesomeTabButton(title: "Next",
     //                                                     font: UIFont.italicSystemFont(ofSize: 16.0),
     //                                                     isEnable: true,
