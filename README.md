@@ -6,6 +6,7 @@
     <img src="https://img.shields.io/badge/platform-iOS9%2B-blue.svg?style=flat" alt="Platform: iOS 9+" />
     <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift5-f48041.svg?style=flat" alt="Language: Swift 5" /></a>
     <a href="https://cocoapods.org/pods/AwesomeSpotlightView"><img src="https://cocoapod-badges.herokuapp.com/v/AwesomeSpotlightView/badge.png" alt="Cocoapods compatible" /></a>
+    <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager compatible" />
     <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT" />
 </p>
  
@@ -33,6 +34,15 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'AwesomeSpotlightView'
 ```
+
+### Swift Package Manager (SPM)
+
+To install `AwesomeSpotlightView` using [Swift Package Manager](https://swift.org/package-manager/) add 
+
+`.package(name: "AwesomeSpotlightView", url: "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git", from: "0.1.15"),"` 
+
+to your Package.swift, then follow the integration tutorial [here](https://swift.org/package-manager#importing-dependencies).
+
 ### Manually
 
 * Just drop AwesomeSpotlightView folder in your project.
