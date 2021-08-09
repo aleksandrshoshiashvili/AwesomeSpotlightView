@@ -23,15 +23,23 @@ private class Localizator {
   private init() {}
   
   lazy var localizableDictionary: NSDictionary! = {
-    if let path = Bundle.module.path(
-      forResource: Constants.localisationResourceName,
-      ofType: Constants.localisationResourceType
-    ) {
-      return NSDictionary(contentsOfFile: path)
-    } else if let bundlePath = Bundle(for: AwesomeSpotlightView.self).path(
+    let sourceBundlePath: String?
+
+    if let moduleBundlePath = Bundle.module.path(
       forResource: Constants.bundleResourceName,
       ofType: Constants.bundleResourceType
-    ), let path = Bundle(path: bundlePath)?.path(
+    ) {
+      sourceBundlePath = moduleBundlePath
+    } else if let path = Bundle(for: AwesomeSpotlightView.self).path(
+      forResource: Constants.bundleResourceName,
+      ofType: Constants.bundleResourceType
+    ) {
+      sourceBundlePath = path
+    } else {
+      sourceBundlePath = nil
+    }
+
+    if let bundlePath = sourceBundlePath, let path = Bundle(path: bundlePath)?.path(
       forResource: Constants.localisationResourceName,
       ofType: Constants.localisationResourceType
     ) {
