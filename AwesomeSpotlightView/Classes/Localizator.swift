@@ -23,26 +23,23 @@ private class Localizator {
   private init() {}
   
   lazy var localizableDictionary: NSDictionary! = {
-    let sourceBundlePath: String?
+    let resourceBundle: Bundle
 
-    if let moduleBundlePath = Bundle.module.path(
-      forResource: Constants.bundleResourceName,
-      ofType: Constants.bundleResourceType
-    ) {
-      sourceBundlePath = moduleBundlePath
-    } else if let path = Bundle(for: AwesomeSpotlightView.self).path(
-      forResource: Constants.bundleResourceName,
-      ofType: Constants.bundleResourceType
-    ) {
-      sourceBundlePath = path
-    } else {
-      sourceBundlePath = nil
-    }
+    #if SWIFT_PACKAGE
+    resourceBundle = Bundle.module
+    #else
+    resourceBundle = Bundle(for: AwesomeSpotlightView.self)
+    #endif
 
-    if let bundlePath = sourceBundlePath, let path = Bundle(path: bundlePath)?.path(
-      forResource: Constants.localisationResourceName,
-      ofType: Constants.localisationResourceType
-    ) {
+    if
+      let bundlePath = resourceBundle.path(
+        forResource: Constants.bundleResourceName,
+        ofType: Constants.bundleResourceType
+      ),
+      let path = Bundle(path: bundlePath)?.path(
+        forResource: Constants.localisationResourceName,
+        ofType: Constants.localisationResourceType
+      ) {
       return NSDictionary(contentsOfFile: path)
     }
     fatalError("Localizable file NOT found")
