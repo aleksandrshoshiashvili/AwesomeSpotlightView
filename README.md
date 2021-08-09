@@ -13,9 +13,9 @@
 
 AwesomeSpotlightView is a nice and simple library for iOS written on Swift 5. It's highly customizable and easy-to-use tool. Works perfectly for tutorial or coach in your app. 
 
-![icon](https://s8.hostingkartinok.com/uploads/images/2017/06/2de205e60758e2d620c8a9a4621f9e75.gif)
+![icon](https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView/raw/master/Resources/gif.gif)
 
-![icon](https://s8.hostingkartinok.com/uploads/images/2017/06/0bb7ff8437aac08c335f1074ef990d4e.gif)
+![icon](https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView/raw/master/Resources/gif_1.gif)
 
 ## Example
 
