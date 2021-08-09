@@ -55,8 +55,16 @@ public class AwesomeSpotlightView: UIView {
   public var labelSpacing: CGFloat = kMaxLabelSpacing
   public var enableArrowDown = kEnableArrowDown
   public var showAllSpotlightsAtOnce = kShowAllSpotlightsAtOnce
-  public var continueButtonModel = AwesomeTabButton(title: "Continue".localized, font: kContinueLabelFont, isEnable: kEnableContinueLabel)
-  public var skipButtonModel = AwesomeTabButton(title: "Skip".localized, font: kSkipButtonFont, isEnable: kEnableSkipButton)
+  public var continueButtonModel = AwesomeTabButton(
+    title: "Continue".localized,
+    font: kContinueLabelFont,
+    isEnable: kEnableContinueLabel
+  )
+  public var skipButtonModel = AwesomeTabButton(
+    title: "Skip".localized,
+    font: kSkipButtonFont,
+    isEnable: kEnableSkipButton
+  )
   public var skipButtonLastStepTitle = kSkipButtonLastStepTitle
   
   public var spotlightMaskColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6) {
@@ -105,13 +113,13 @@ public class AwesomeSpotlightView: UIView {
   }
   
   private func setupMask() {
-    spotlightMask.fillRule = CAShapeLayerFillRule.evenOdd
+    spotlightMask.fillRule = .evenOdd
     spotlightMask.fillColor = spotlightMaskColor.cgColor
     layer.addSublayer(spotlightMask)
   }
   
   private func setupTouches() {
-    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AwesomeSpotlightView.userDidTap(_:)))
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userDidTap))
     addGestureRecognizer(tapGestureRecognizer)
   }
   
@@ -145,9 +153,23 @@ public class AwesomeSpotlightView: UIView {
     let continueLabelHeight: CGFloat = 30.0
     
     if #available(iOS 11.0, *) {
-      continueLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height - continueLabelHeight - safeAreaInsets.bottom, width: continueLabelWidth, height: continueLabelHeight))
+      continueLabel = UILabel(
+        frame: CGRect(
+          x: 0,
+          y: bounds.size.height - continueLabelHeight - safeAreaInsets.bottom,
+          width: continueLabelWidth,
+          height: continueLabelHeight
+        )
+      )
     } else {
-      continueLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height - continueLabelHeight, width: continueLabelWidth, height: continueLabelHeight))
+      continueLabel = UILabel(
+        frame: CGRect(
+          x: 0,
+          y: bounds.size.height - continueLabelHeight,
+          width: continueLabelWidth,
+          height: continueLabelHeight
+        )
+      )
     }
     
     continueLabel.font = continueButtonModel.font
@@ -164,12 +186,26 @@ public class AwesomeSpotlightView: UIView {
     let skipSpotlightButtonHeight: CGFloat = 30.0
     
     if #available(iOS 11.0, *) {
-      skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight - safeAreaInsets.bottom, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
+      skipSpotlightButton = UIButton(
+        frame: CGRect(
+          x: continueLabelWidth,
+          y: bounds.size.height - skipSpotlightButtonHeight - safeAreaInsets.bottom,
+          width: skipSpotlightButtonWidth,
+          height: skipSpotlightButtonHeight
+        )
+      )
     } else {
-      skipSpotlightButton = UIButton(frame: CGRect(x: continueLabelWidth, y: bounds.size.height - skipSpotlightButtonHeight, width: skipSpotlightButtonWidth, height: skipSpotlightButtonHeight))
+      skipSpotlightButton = UIButton(
+        frame: CGRect(
+          x: continueLabelWidth,
+          y: bounds.size.height - skipSpotlightButtonHeight,
+          width: skipSpotlightButtonWidth,
+          height: skipSpotlightButtonHeight
+        )
+      )
     }
     
-    skipSpotlightButton.addTarget(self, action: #selector(AwesomeSpotlightView.skipSpotlight), for: .touchUpInside)
+    skipSpotlightButton.addTarget(self, action: #selector(skipSpotlight), for: .touchUpInside)
     skipSpotlightButton.setTitle(skipButtonModel.title, for: [])
     skipSpotlightButton.titleLabel?.font = skipButtonModel.font
     skipSpotlightButton.alpha = 0
@@ -269,10 +305,14 @@ public class AwesomeSpotlightView: UIView {
   
   private func showArrowIfNeeded(spotlight: AwesomeSpotlight) {
     if enableArrowDown {
-      let arrowImageOrigin = CGPoint(x: spotlight.rect.origin.x + spotlight.rect.width / 2.0 - arrowDownSize.width / 2.0,
-                                     y: spotlight.rect.origin.y - arrowDownSize.height * 2)
-      arrowDownImageView.frame = CGRect(origin: arrowImageOrigin,
-                                        size: arrowDownSize)
+      let arrowImageOrigin = CGPoint(
+        x: spotlight.rect.origin.x + spotlight.rect.width / 2.0 - arrowDownSize.width / 2.0,
+        y: spotlight.rect.origin.y - arrowDownSize.height * 2
+      )
+      arrowDownImageView.frame = .init(
+        origin: arrowImageOrigin,
+        size: arrowDownSize
+      )
       UIView.animate(withDuration: animationDuration, animations: {
         self.arrowDownImageView.alpha = 1
       })
@@ -366,7 +406,7 @@ public class AwesomeSpotlightView: UIView {
       let y = floor(spotlight.rect.origin.y + (spotlight.rect.size.height / 2.0))
       
       let center = CGPoint(x: x, y: y)
-      rect = CGRect(origin: center, size: CGSize.zero)
+      rect = CGRect(origin: center, size: .zero)
     }
     
     let spotlightPath = UIBezierPath(rect: bounds)
@@ -419,10 +459,10 @@ public class AwesomeSpotlightView: UIView {
     let animationKeyPath = "path"
     let animation = CABasicAnimation(keyPath: animationKeyPath)
     animation.delegate = self
-    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+    animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
     animation.duration = animationDuration
     animation.isRemovedOnCompletion = false
-    animation.fillMode = CAMediaTimingFillMode.forwards
+    animation.fillMode = .forwards
     animation.fromValue = spotlightMask.path
     animation.toValue = path
     spotlightMask.add(animation, forKey: animationKeyPath)
