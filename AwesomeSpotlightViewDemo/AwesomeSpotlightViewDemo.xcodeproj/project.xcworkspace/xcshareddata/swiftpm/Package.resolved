@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AwesomeSpotlightView",
+        "repositoryURL": "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git",
+        "state": {
+          "branch": null,
+          "revision": "73f28200989f0963f685272240a49629988db0c8",
+          "version": "0.1.12"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

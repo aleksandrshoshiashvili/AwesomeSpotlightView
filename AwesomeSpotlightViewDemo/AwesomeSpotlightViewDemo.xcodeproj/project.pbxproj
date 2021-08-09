@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,11 +12,7 @@
 		5206176A1E64AA6D008689A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520617681E64AA6D008689A2 /* Main.storyboard */; };
 		5206176C1E64AA6D008689A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5206176B1E64AA6D008689A2 /* Assets.xcassets */; };
 		5206176F1E64AA6D008689A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5206176D1E64AA6D008689A2 /* LaunchScreen.storyboard */; };
-		5212CC0B1E64B0A800331B19 /* AwesomeSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CC071E64B0A800331B19 /* AwesomeSpotlight.swift */; };
-		5212CC0C1E64B0A800331B19 /* AwesomeSpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */; };
-		5212CC0D1E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */; };
-		5212CC0E1E64B0A800331B19 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CC0A1E64B0A800331B19 /* Localizator.swift */; };
-		6CBBD06D2030924E002A5F95 /* AwesomeTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */; };
+		8927672826C1D3D400892BEB /* AwesomeSpotlightView in Frameworks */ = {isa = PBXBuildFile; productRef = 8927672726C1D3D400892BEB /* AwesomeSpotlightView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +23,6 @@
 		5206176B1E64AA6D008689A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5206176E1E64AA6D008689A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520617701E64AA6E008689A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5212CC071E64B0A800331B19 /* AwesomeSpotlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSpotlight.swift; sourceTree = "<group>"; };
-		5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSpotlightView.swift; sourceTree = "<group>"; };
-		5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AwesomeSpotlightViewBundle.bundle; sourceTree = "<group>"; };
-		5212CC0A1E64B0A800331B19 /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
-		6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeTabButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8927672826C1D3D400892BEB /* AwesomeSpotlightView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +58,6 @@
 		520617631E64AA6D008689A2 /* AwesomeSpotlightViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5212CC051E64B0A800331B19 /* AwesomeSpotlightView */,
 				520617641E64AA6D008689A2 /* AppDelegate.swift */,
 				520617661E64AA6D008689A2 /* ViewController.swift */,
 				520617681E64AA6D008689A2 /* Main.storyboard */,
@@ -75,26 +66,6 @@
 				520617701E64AA6E008689A2 /* Info.plist */,
 			);
 			path = AwesomeSpotlightViewDemo;
-			sourceTree = "<group>";
-		};
-		5212CC051E64B0A800331B19 /* AwesomeSpotlightView */ = {
-			isa = PBXGroup;
-			children = (
-				5212CC061E64B0A800331B19 /* Classes */,
-			);
-			path = AwesomeSpotlightView;
-			sourceTree = "<group>";
-		};
-		5212CC061E64B0A800331B19 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				6CBBD06C2030924E002A5F95 /* AwesomeTabButton.swift */,
-				5212CC071E64B0A800331B19 /* AwesomeSpotlight.swift */,
-				5212CC081E64B0A800331B19 /* AwesomeSpotlightView.swift */,
-				5212CC091E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle */,
-				5212CC0A1E64B0A800331B19 /* Localizator.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +84,9 @@
 			dependencies = (
 			);
 			name = AwesomeSpotlightViewDemo;
+			packageProductDependencies = (
+				8927672726C1D3D400892BEB /* AwesomeSpotlightView */,
+			);
 			productName = AwesomeSpotlightViewDemo;
 			productReference = 520617611E64AA6D008689A2 /* AwesomeSpotlightViewDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 520617581E64AA6C008689A2;
+			packageReferences = (
+				8927672626C1D3D400892BEB /* XCRemoteSwiftPackageReference "AwesomeSpotlightView" */,
+			);
 			productRefGroup = 520617621E64AA6D008689A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,7 +139,6 @@
 				5206176F1E64AA6D008689A2 /* LaunchScreen.storyboard in Resources */,
 				5206176C1E64AA6D008689A2 /* Assets.xcassets in Resources */,
 				5206176A1E64AA6D008689A2 /* Main.storyboard in Resources */,
-				5212CC0D1E64B0A800331B19 /* AwesomeSpotlightViewBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,11 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520617671E64AA6D008689A2 /* ViewController.swift in Sources */,
-				6CBBD06D2030924E002A5F95 /* AwesomeTabButton.swift in Sources */,
-				5212CC0B1E64B0A800331B19 /* AwesomeSpotlight.swift in Sources */,
 				520617651E64AA6D008689A2 /* AppDelegate.swift in Sources */,
-				5212CC0C1E64B0A800331B19 /* AwesomeSpotlightView.swift in Sources */,
-				5212CC0E1E64B0A800331B19 /* Localizator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +274,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -314,7 +287,10 @@
 				DEVELOPMENT_TEAM = 92465BS428;
 				INFOPLIST_FILE = AwesomeSpotlightViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = aleksandrshoshiashvili.AwesomeSpotlightViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -328,7 +304,10 @@
 				DEVELOPMENT_TEAM = 92465BS428;
 				INFOPLIST_FILE = AwesomeSpotlightViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = aleksandrshoshiashvili.AwesomeSpotlightViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -357,6 +336,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8927672626C1D3D400892BEB /* XCRemoteSwiftPackageReference "AwesomeSpotlightView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aleksandrshoshiashvili/AwesomeSpotlightView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.12;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8927672726C1D3D400892BEB /* AwesomeSpotlightView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8927672626C1D3D400892BEB /* XCRemoteSwiftPackageReference "AwesomeSpotlightView" */;
+			productName = AwesomeSpotlightView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 520617591E64AA6C008689A2 /* Project object */;
 }

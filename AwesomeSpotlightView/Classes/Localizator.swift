@@ -9,26 +9,39 @@
 import Foundation
 
 private class Localizator {
-  
+
   static let sharedInstance = Localizator()
+
+  private struct Constants {
+    static let bundleResourceName = "AwesomeSpotlightViewBundle"
+    static let bundleResourceType = "bundle"
+    static let localisationResourceName = "Localizable"
+    static let localisationResourceType = "plist"
+    static let buttonLocalisationKey = "Buttons"
+  }
+
+  private init() {}
   
   lazy var localizableDictionary: NSDictionary! = {
-    
-    if let bundlePath = Bundle(for: AwesomeSpotlightView.self)
-      .path(forResource: "AwesomeSpotlightViewBundle",
-            ofType: "bundle") {
-      if let path = Bundle(path: bundlePath)?
-        .path(forResource: "Localizable",
-              ofType: "plist") {
-        return NSDictionary(contentsOfFile: path)
-      }
+    if let path = Bundle.module.path(
+      forResource: Constants.localisationResourceName,
+      ofType: Constants.localisationResourceType
+    ) {
+      return NSDictionary(contentsOfFile: path)
+    } else if let bundlePath = Bundle(for: AwesomeSpotlightView.self).path(
+      forResource: Constants.bundleResourceName,
+      ofType: Constants.bundleResourceType
+    ), let path = Bundle(path: bundlePath)?.path(
+      forResource: Constants.localisationResourceName,
+      ofType: Constants.localisationResourceType
+    ) {
+      return NSDictionary(contentsOfFile: path)
     }
     fatalError("Localizable file NOT found")
   }()
   
   func localize(string: String) -> String {
-    
-    guard let localizedString = ((localizableDictionary.value(forKey: "Buttons") as AnyObject).value(forKey: string) as AnyObject).value(forKey: "value") as? String else {
+    guard let localizedString = ((localizableDictionary.value(forKey: Constants.buttonLocalisationKey) as AnyObject).value(forKey: string) as AnyObject).value(forKey: "value") as? String else {
       assertionFailure("Missing translation for: \(string)")
       return ""
     }

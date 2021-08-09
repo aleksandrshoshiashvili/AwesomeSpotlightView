@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -15,6 +15,8 @@ let package = Package(
         .target(
             name: "AwesomeSpotlightView",
             dependencies: [],
-            path: "AwesomeSpotlightView/Classes/"),
+            path: "AwesomeSpotlightView/Classes/",
+            resources: [.process("AwesomeSpotlightViewBundle.bundle")]
+        ),
     ]
 )

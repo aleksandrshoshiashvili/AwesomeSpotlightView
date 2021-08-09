@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AwesomeSpotlightView
 
 class ViewController: UIViewController {
   
